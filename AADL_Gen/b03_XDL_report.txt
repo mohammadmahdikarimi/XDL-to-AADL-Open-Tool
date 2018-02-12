@@ -1,0 +1,329 @@
+
+# =======================================================
+# Instanses I/O Connection Information:
+# =======================================================
+
+input Wired to: Instance (ID)[outport (ID)]
+
+==== 0 ====
+name = request1_0 type:<IOB> position <CIOB_X17Y75> <G19>
+output [1]
+   0- I , 
+input [0]
+==== 1 ====
+name = request2_1 type:<IOB> position <CIOB_X17Y74> <G12>
+output [1]
+   0- I , 
+input [0]
+==== 2 ====
+name = request3_2 type:<IOB> position <CIOB_X17Y72> <H11>
+output [1]
+   0- I , 
+input [0]
+==== 3 ====
+name = request4_3 type:<IOB> position <CIOB_X17Y74> <F13>
+output [1]
+   0- I , 
+input [0]
+==== 4 ====
+name = grant_o_0_4 type:<IOB> position <CIOB_X17Y75> <F18>
+output [0]
+input [1]
+   0- O , 
+   0- grant_o_3_17 (17)[AQ (2)] , 
+==== 5 ====
+name = grant_o_1_5 type:<IOB> position <CIOB_X17Y73> <H19>
+output [0]
+input [1]
+   0- O , 
+   0- grant_o_3_17 (17)[BQ (3)] , 
+==== 6 ====
+name = grant_o_2_6 type:<IOB> position <CIOB_X17Y72> <G11>
+output [0]
+input [1]
+   0- O , 
+   0- grant_o_3_17 (17)[CQ (4)] , 
+==== 7 ====
+name = grant_o_3_7 type:<IOB> position <CIOB_X17Y73> <H18>
+output [0]
+input [1]
+   0- O , 
+   0- grant_o_3_17 (17)[DQ (5)] , 
+==== 8 ====
+name = clock_8 type:<IOB> position <CIOB_X17Y30> <AB15>
+output [1]
+   0- I , 
+input [0]
+==== 9 ====
+name = reset_9 type:<IOB> position <CIOB_X17Y70> <G10>
+output [1]
+   0- I , 
+input [0]
+==== 10 ====
+name = clock_BUFGP_BUFG_10 type:<BUFG> position <CLK_BUFGMUX_X47Y66> <BUFGCTRL_X0Y0>
+output [1]
+   0- O , 
+input [1]
+   0- I0 , 
+   0- clock_8 (8)[I (0)] , 
+==== 11 ====
+name = coda0_4_11 type:<SLICEL> position <CLBLM_X15Y70> <SLICE_X25Y70>
+--------
+LUT Information:
+  LUTA6 (coda0_mux0000<3>19) O6=((~A1*(~A4*(A6*A3)))+(A1*((~A4*((~A2*(A6*A3))+(A2*((A6*A3)+A5))))+(A4*A2)))) init=0X88F888F088888800
+  LUTB6 (coda0_mux0000<3>61) O6=((~A1*A6)+(A1*(A4+((~A2*A6)+(A2*(A3+(A5+A6))))))) init=0XFFFFFFFFAA88AA80
+  LUTC6 (coda0_mux0000<4>90) O6=((~A3*((A4*A5)+A6))+(A3*((~A4*(A2+A6))+(A4*(A2+(A6+A5)))))) init=0XFFFFFFFFFFC0C0C0
+  LUTD6 (coda0_mux0000<4>41) O6=(A6*(A5+(A1+(A4+A3)))) init=0XFFFFFFFA00000000
+  cfg:  ACY0:  #OFF 	AFFMUX:  #OFF	AOUTMUX:  #OFF	AUSED:  0
+  cfg:  BCY0:  #OFF 	BFFMUX:  O6	BOUTMUX:  #OFF	BUSED:  #OFF
+  cfg:  CCY0:  #OFF 	CFFMUX:  O6	COUTMUX:  #OFF	CUSED:  #OFF
+  cfg:  DCY0:  #OFF 	DFFMUX:  #OFF	DOUTMUX:  #OFF	DUSED:  0
+  cfg:  PRECYINIT:  #OFF
+output [4]
+   0- BQ ,  1- CQ ,  2- A ,  3- D , 
+input [24]
+   0- A1 ,  1- A2 ,  2- A3 ,  3- A4 ,  4- A5 ,  5- A6 ,  6- B1 ,  7- B2 ,  8- B3 ,  9- B4 ,  10- B5 ,  11- B6 ,  12- C2 ,  13- C3 ,  14- C4 ,  15- C5 ,  16- C6 ,  17- D1 ,  18- D3 ,  19- D4 ,  20- D5 ,  21- D6 ,  22- CLK ,  23- SR , 
+   0- coda1_4_16 (16)[CQ (2)] ,  1- stato_FSM_FFd3_18 (18)[DQ (3)] ,  2- stato_FSM_FFd3_18 (18)[BQ (1)] ,  3- fu4_19 (19)[AQ (3)] ,  4- coda2_3_14 (14)[D (0)] ,  5- ru4_23 (23)[AQ (0)] ,  6- coda0_4_11 (11)[BQ (0)] ,  7- stato_FSM_FFd3_18 (18)[BQ (1)] ,  8- grant_o_3_17 (17)[A (1)] ,  9- stato_FSM_FFd3_18 (18)[A (0)] ,  10- N16_15 (15)[A (1)] ,  11- coda0_4_11 (11)[A (2)] ,  12- coda0_4_11 (11)[D (3)] ,  13- coda1_4_16 (16)[DQ (3)] ,  14- coda0_4_11 (11)[CQ (1)] ,  15- coda0_1_21 (21)[B (0)] ,  16- N16_15 (15)[B (2)] ,  17- fu4_19 (19)[BQ (4)] ,  18- fu4_19 (19)[DQ (6)] ,  19- fu4_19 (19)[CQ (5)] ,  20- fu4_19 (19)[AQ (3)] ,  21- stato_FSM_FFd3_18 (18)[DQ (3)] ,  22- clock_BUFGP_BUFG_10 (10)[O (0)] ,  23- reset_9 (9)[I (0)] , 
+==== 12 ====
+name = coda3_4_12 type:<SLICEL> position <CLBLM_X15Y72> <SLICE_X24Y72>
+--------
+LUT Information:
+  LUTA6 (coda3_mux0000<4>1) O6=((~A4*(A2*(A3*A5)))+(A4*(((~A2*(A3*~A5))+(A2*A3))+A6))) init=0XFFC0FF00C0C0F000
+  LUTB6 (coda1_mux0000<1>12) O6=((~A4*((~A6*(A3+(A1+~A5)))+(A6*((~A3*~A5)+A1))))+(A4*((~A6*(((~A3*~A5)+A3)*~A1))+(A6*(~A3*(~A1*~A5)))))) init=0X00AA05AF50FA55FF
+  cfg:  ACY0:  #OFF 	AFFMUX:  O6	AOUTMUX:  #OFF	AUSED:  #OFF
+  cfg:  BCY0:  #OFF 	BFFMUX:  #OFF	BOUTMUX:  #OFF	BUSED:  0
+  cfg:  CCY0:  #OFF 	CFFMUX:  #OFF	COUTMUX:  #OFF	CUSED:  #OFF
+  cfg:  DCY0:  #OFF 	DFFMUX:  #OFF	DOUTMUX:  #OFF	DUSED:  #OFF
+  cfg:  PRECYINIT:  #OFF
+output [2]
+   0- B ,  1- AQ , 
+input [12]
+   0- A2 ,  1- A3 ,  2- A4 ,  3- A5 ,  4- A6 ,  5- B1 ,  6- B3 ,  7- B4 ,  8- B5 ,  9- B6 ,  10- CLK ,  11- SR , 
+   0- coda2_4_22 (22)[BQ (3)] ,  1- stato_FSM_FFd3_18 (18)[BQ (1)] ,  2- coda3_4_12 (12)[AQ (1)] ,  3- coda3_4_12 (12)[B (0)] ,  4- stato_FSM_FFd3_18 (18)[A (0)] ,  5- ru4_23 (23)[AQ (0)] ,  6- ru4_23 (23)[BQ (1)] ,  7- fu4_19 (19)[AQ (3)] ,  8- coda2_4_22 (22)[D (1)] ,  9- fu4_19 (19)[BQ (4)] ,  10- clock_BUFGP_BUFG_10 (10)[O (0)] ,  11- reset_9 (9)[I (0)] , 
+==== 13 ====
+name = coda3_3_13 type:<SLICEL> position <CLBLM_X15Y70> <SLICE_X24Y70>
+--------
+LUT Information:
+  LUTB6 (coda3_mux0000<1>1) O6=((~A4*(A2*(A3*A6)))+(A4*(((~A2*(A3*~A6))+(A2*A3))+A5))) init=0XFFC0C0C0FF00F000
+  LUTC6 (coda3_mux0000<2>1) O6=((~A4*(A1*(A3*A6)))+(A4*(((~A1*(A3*~A6))+(A1*A3))+A5))) init=0XFFA0A0A0FF00F000
+  LUTD6 (coda3_mux0000<3>1) O6=((~A2*(A5*(A3*A6)))+(A2*(((~A5*(A3*~A6))+(A5*A3))+A4))) init=0XFCF0CC00CCC0CCC0
+  cfg:  ACY0:  #OFF 	AFFMUX:  #OFF	AOUTMUX:  #OFF	AUSED:  #OFF
+  cfg:  BCY0:  #OFF 	BFFMUX:  O6	BOUTMUX:  #OFF	BUSED:  #OFF
+  cfg:  CCY0:  #OFF 	CFFMUX:  O6	COUTMUX:  #OFF	CUSED:  #OFF
+  cfg:  DCY0:  #OFF 	DFFMUX:  O6	DOUTMUX:  #OFF	DUSED:  #OFF
+  cfg:  PRECYINIT:  #OFF
+output [3]
+   0- BQ ,  1- CQ ,  2- DQ , 
+input [17]
+   0- B2 ,  1- B3 ,  2- B4 ,  3- B5 ,  4- B6 ,  5- C1 ,  6- C3 ,  7- C4 ,  8- C5 ,  9- C6 ,  10- D2 ,  11- D3 ,  12- D4 ,  13- D5 ,  14- D6 ,  15- CLK ,  16- SR , 
+   0- coda2_3_14 (14)[AQ (1)] ,  1- stato_FSM_FFd3_18 (18)[BQ (1)] ,  2- coda3_3_13 (13)[BQ (0)] ,  3- stato_FSM_FFd3_18 (18)[A (0)] ,  4- coda3_4_12 (12)[B (0)] ,  5- coda2_3_14 (14)[BQ (2)] ,  6- stato_FSM_FFd3_18 (18)[BQ (1)] ,  7- coda3_3_13 (13)[CQ (1)] ,  8- stato_FSM_FFd3_18 (18)[A (0)] ,  9- coda3_4_12 (12)[B (0)] ,  10- coda3_3_13 (13)[DQ (2)] ,  11- stato_FSM_FFd3_18 (18)[BQ (1)] ,  12- stato_FSM_FFd3_18 (18)[A (0)] ,  13- coda2_3_14 (14)[CQ (3)] ,  14- coda3_4_12 (12)[B (0)] ,  15- clock_BUFGP_BUFG_10 (10)[O (0)] ,  16- reset_9 (9)[I (0)] , 
+==== 14 ====
+name = coda2_3_14 type:<SLICEL> position <CLBLM_X15Y72> <SLICE_X25Y72>
+--------
+LUT Information:
+  LUTA6 (coda2_mux0000<1>1) O6=((~A3*((~A2*(A1*A6))+(A2*((A1*A6)+A5))))+(A3*((~A2*((A1*A6)+A4))+(A2*((~A1*(A4+A5))+(A1*(A4+(A5+A6)))))))) init=0XFEEEFAAAFCCCF000
+  LUTB6 (coda2_mux0000<2>1) O6=((~A1*((~A2*(A4*A6))+(A2*((A4*A6)+A5))))+(A1*((~A2*((A4*A6)+A3))+(A2*((~A4*(A3+A5))+(A4*(A3+(A5+A6)))))))) init=0XFFECFFA0ECECA0A0
+  LUTC6 (coda2_mux0000<3>1) O6=((~A2*((~A1*(A4*A6))+(A1*((A4*A6)+A3))))+(A2*((~A1*((A4*A6)+A5))+(A1*((~A4*(A5+A3))+(A4*(A5+(A3+A6)))))))) init=0XFFECFFA0ECECA0A0
+  LUTD6 (coda0_mux0000<3>19_SW0) O6=(A4+(A5+A6)) init=0XFFFFFFFFFFFFFF00
+  cfg:  ACY0:  #OFF 	AFFMUX:  O6	AOUTMUX:  #OFF	AUSED:  #OFF
+  cfg:  BCY0:  #OFF 	BFFMUX:  O6	BOUTMUX:  #OFF	BUSED:  #OFF
+  cfg:  CCY0:  #OFF 	CFFMUX:  O6	COUTMUX:  #OFF	CUSED:  #OFF
+  cfg:  DCY0:  #OFF 	DFFMUX:  #OFF	DOUTMUX:  #OFF	DUSED:  0
+  cfg:  PRECYINIT:  #OFF
+output [4]
+   0- D ,  1- AQ ,  2- BQ ,  3- CQ , 
+input [23]
+   0- A1 ,  1- A2 ,  2- A3 ,  3- A4 ,  4- A5 ,  5- A6 ,  6- B1 ,  7- B2 ,  8- B3 ,  9- B4 ,  10- B5 ,  11- B6 ,  12- C1 ,  13- C2 ,  14- C3 ,  15- C4 ,  16- C5 ,  17- C6 ,  18- D4 ,  19- D5 ,  20- D6 ,  21- CLK ,  22- SR , 
+   0- coda2_3_14 (14)[AQ (1)] ,  1- coda1_4_16 (16)[AQ (0)] ,  2- coda3_3_13 (13)[BQ (0)] ,  3- coda0_4_11 (11)[D (3)] ,  4- coda0_1_21 (21)[D (1)] ,  5- coda2_4_22 (22)[A (2)] ,  6- coda3_3_13 (13)[CQ (1)] ,  7- coda1_4_16 (16)[BQ (1)] ,  8- coda0_4_11 (11)[D (3)] ,  9- coda2_3_14 (14)[BQ (2)] ,  10- coda0_1_21 (21)[D (1)] ,  11- coda2_4_22 (22)[A (2)] ,  12- coda1_4_16 (16)[CQ (2)] ,  13- coda3_3_13 (13)[DQ (2)] ,  14- coda0_1_21 (21)[D (1)] ,  15- coda2_3_14 (14)[CQ (3)] ,  16- coda0_4_11 (11)[D (3)] ,  17- coda2_4_22 (22)[A (2)] ,  18- fu4_19 (19)[DQ (6)] ,  19- fu4_19 (19)[CQ (5)] ,  20- fu4_19 (19)[BQ (4)] ,  21- clock_BUFGP_BUFG_10 (10)[O (0)] ,  22- reset_9 (9)[I (0)] , 
+==== 15 ====
+name = N16_15 type:<SLICEL> position <CLBLL_X16Y70> <SLICE_X27Y70>
+--------
+LUT Information:
+  LUTA6 (coda0_mux0000<3>30) O6=(((~A5*(~A2+(A2*A4)))+(A5*A6))*~A3) init=0X0F0F0F0300000F03
+  LUTB6 (coda0_mux0000<4>61) O6=(A3*((~A1*(~A6*~A5))+(A1*(~A6*(A4*A2))))) init=0X000000008000D050
+  LUTC6 (coda0_mux0000<4>61_SW0) O6=((~A6*(~A2*(A5+~A4)))+(A6*(~A2+~A3))) init=0X3F3F3F3F33330033
+  cfg:  ACY0:  #OFF 	AFFMUX:  #OFF	AOUTMUX:  #OFF	AUSED:  0
+  cfg:  BCY0:  #OFF 	BFFMUX:  #OFF	BOUTMUX:  #OFF	BUSED:  0
+  cfg:  CCY0:  #OFF 	CFFMUX:  #OFF	COUTMUX:  #OFF	CUSED:  0
+  cfg:  DCY0:  #OFF 	DFFMUX:  #OFF	DOUTMUX:  #OFF	DUSED:  #OFF
+  cfg:  PRECYINIT:  #OFF
+output [3]
+   0- C ,  1- A ,  2- B , 
+input [16]
+   0- A2 ,  1- A3 ,  2- A4 ,  3- A5 ,  4- A6 ,  5- B1 ,  6- B2 ,  7- B3 ,  8- B4 ,  9- B5 ,  10- B6 ,  11- C2 ,  12- C3 ,  13- C4 ,  14- C5 ,  15- C6 , 
+   0- ru4_23 (23)[DQ (3)] ,  1- ru4_23 (23)[BQ (1)] ,  2- fu4_19 (19)[DQ (6)] ,  3- ru4_23 (23)[CQ (2)] ,  4- fu4_19 (19)[CQ (5)] ,  5- ru4_23 (23)[BQ (1)] ,  6- coda0_4_11 (11)[CQ (1)] ,  7- stato_FSM_FFd3_18 (18)[BQ (1)] ,  8- fu4_19 (19)[BQ (4)] ,  9- N16_15 (15)[C (0)] ,  10- ru4_23 (23)[AQ (0)] ,  11- coda0_4_11 (11)[CQ (1)] ,  12- fu4_19 (19)[CQ (5)] ,  13- ru4_23 (23)[DQ (3)] ,  14- fu4_19 (19)[DQ (6)] ,  15- ru4_23 (23)[CQ (2)] , 
+==== 16 ====
+name = coda1_4_16 type:<SLICEL> position <CLBLM_X15Y71> <SLICE_X25Y71>
+--------
+LUT Information:
+  LUTA6 (coda1_mux0000<1>1) O6=((~A2*((~A4*(A1*A5))+(A4*((A1*A5)+A6))))+(A2*((~A4*((A1*A5)+A3))+(A4*((~A1*(A3+A6))+(A1*(A3+(A5+A6)))))))) init=0XFFEAFFC0EAEAC0C0
+  LUTB6 (coda1_mux0000<2>1) O6=((~A2*((~A3*(A4*A6))+(A3*((A4*A6)+A1))))+(A2*((~A3*((A4*A6)+A5))+(A3*((~A4*(A1+A5))+(A4*(A1+(A5+A6)))))))) init=0XFFECFFA0ECECA0A0
+  LUTC6 (coda1_mux0000<3>1) O6=((~A2*((~A5*(A4*A6))+(A5*((A4*A6)+A1))))+(A2*((~A5*((A4*A6)+A3))+(A5*((~A4*(A1+A3))+(A4*(A1+(A3+A6)))))))) init=0XFFEAFFC0EAEAC0C0
+  LUTD6 (coda1_mux0000<4>1) O6=((~A1*((~A5*(A2*A3))+(A5*((A2*A3)+A6))))+(A1*((~A5*((A2*A3)+A4))+(A5*((~A2*(A4+A6))+(A2*(A4+(A3+A6)))))))) init=0XFFFFEAC0EAC0EAC0
+  cfg:  ACY0:  #OFF 	AFFMUX:  O6	AOUTMUX:  #OFF	AUSED:  #OFF
+  cfg:  BCY0:  #OFF 	BFFMUX:  O6	BOUTMUX:  #OFF	BUSED:  #OFF
+  cfg:  CCY0:  #OFF 	CFFMUX:  O6	COUTMUX:  #OFF	CUSED:  #OFF
+  cfg:  DCY0:  #OFF 	DFFMUX:  O6	DOUTMUX:  #OFF	DUSED:  #OFF
+  cfg:  PRECYINIT:  #OFF
+output [4]
+   0- AQ ,  1- BQ ,  2- CQ ,  3- DQ , 
+input [26]
+   0- A1 ,  1- A2 ,  2- A3 ,  3- A4 ,  4- A5 ,  5- A6 ,  6- B1 ,  7- B2 ,  8- B3 ,  9- B4 ,  10- B5 ,  11- B6 ,  12- C1 ,  13- C2 ,  14- C3 ,  15- C4 ,  16- C5 ,  17- C6 ,  18- D1 ,  19- D2 ,  20- D3 ,  21- D4 ,  22- D5 ,  23- D6 ,  24- CLK ,  25- SR , 
+   0- coda0_1_21 (21)[CQ (2)] ,  1- coda2_3_14 (14)[AQ (1)] ,  2- coda0_4_11 (11)[D (3)] ,  3- coda1_4_16 (16)[AQ (0)] ,  4- coda0_1_21 (21)[D (1)] ,  5- coda2_4_22 (22)[A (2)] ,  6- coda0_4_11 (11)[D (3)] ,  7- coda0_1_21 (21)[AQ (3)] ,  8- coda2_3_14 (14)[BQ (2)] ,  9- coda1_4_16 (16)[BQ (1)] ,  10- coda0_1_21 (21)[D (1)] ,  11- coda2_4_22 (22)[A (2)] ,  12- coda0_4_11 (11)[D (3)] ,  13- coda0_4_11 (11)[BQ (0)] ,  14- coda0_1_21 (21)[D (1)] ,  15- coda1_4_16 (16)[CQ (2)] ,  16- coda2_3_14 (14)[CQ (3)] ,  17- coda2_4_22 (22)[A (2)] ,  18- coda2_4_22 (22)[BQ (3)] ,  19- coda0_4_11 (11)[CQ (1)] ,  20- coda0_1_21 (21)[D (1)] ,  21- coda0_4_11 (11)[D (3)] ,  22- coda1_4_16 (16)[DQ (3)] ,  23- coda2_4_22 (22)[A (2)] ,  24- clock_BUFGP_BUFG_10 (10)[O (0)] ,  25- reset_9 (9)[I (0)] , 
+==== 17 ====
+name = grant_o_3_17 type:<SLICEL> position <CLBLM_X15Y71> <SLICE_X24Y71>
+--------
+LUT Information:
+  LUTA6 (coda0_mux0000<3>27) O6=(A4+(A6*A5)) init=0XFFFFFF00FF00FF00
+  LUTB6 (coda0_mux0000<2>_SW3) O6=(~A4+(~A3+(A6+A5))) init=0XFFFFFFFFFFFF0FFF
+  cfg:  ACY0:  #OFF 	AFFMUX:  AX	AOUTMUX:  #OFF	AUSED:  0
+  cfg:  BCY0:  #OFF 	BFFMUX:  BX	BOUTMUX:  #OFF	BUSED:  0
+  cfg:  CCY0:  #OFF 	CFFMUX:  CX	COUTMUX:  #OFF	CUSED:  #OFF
+  cfg:  DCY0:  #OFF 	DFFMUX:  DX	DOUTMUX:  #OFF	DUSED:  #OFF
+  cfg:  PRECYINIT:  #OFF
+output [6]
+   0- B ,  1- A ,  2- AQ ,  3- BQ ,  4- CQ ,  5- DQ , 
+input [14]
+   0- A4 ,  1- A5 ,  2- A6 ,  3- B3 ,  4- B4 ,  5- B5 ,  6- B6 ,  7- AX ,  8- BX ,  9- CX ,  10- DX ,  11- CLK ,  12- CE ,  13- SR , 
+   0- ru4_23 (23)[AQ (0)] ,  1- ru4_23 (23)[BQ (1)] ,  2- fu4_19 (19)[BQ (4)] ,  3- ru4_23 (23)[BQ (1)] ,  4- stato_FSM_FFd3_18 (18)[BQ (1)] ,  5- ru4_23 (23)[AQ (0)] ,  6- fu4_19 (19)[BQ (4)] ,  7- grant_3_20 (20)[AQ (1)] ,  8- grant_3_20 (20)[BQ (2)] ,  9- grant_3_20 (20)[CQ (3)] ,  10- grant_3_20 (20)[DQ (4)] ,  11- clock_BUFGP_BUFG_10 (10)[O (0)] ,  12- stato_FSM_FFd3_18 (18)[BQ (1)] ,  13- reset_9 (9)[I (0)] , 
+==== 18 ====
+name = stato_FSM_FFd3_18 type:<SLICEL> position <CLBLL_X16Y71> <SLICE_X27Y71>
+--------
+LUT Information:
+  LUTA6 (coda0_mux0000<1>2111) O6=(A2+(A1*(~A4*(~A3*(~A5*~A6))))) init=0XCCCCCCCCCCCCCCCE
+  LUTB6 (stato_FSM_FFd1-In1_INV_0) O6=~A6 init=0X00000000FFFFFFFF
+  cfg:  ACY0:  #OFF 	AFFMUX:  #OFF	AOUTMUX:  #OFF	AUSED:  0
+  cfg:  BCY0:  #OFF 	BFFMUX:  O6	BOUTMUX:  #OFF	BUSED:  #OFF
+  cfg:  CCY0:  #OFF 	CFFMUX:  CX	COUTMUX:  #OFF	CUSED:  #OFF
+  cfg:  DCY0:  #OFF 	DFFMUX:  DX	DOUTMUX:  #OFF	DUSED:  #OFF
+  cfg:  PRECYINIT:  #OFF
+output [4]
+   0- A ,  1- BQ ,  2- CQ ,  3- DQ , 
+input [11]
+   0- A1 ,  1- A2 ,  2- A3 ,  3- A4 ,  4- A5 ,  5- A6 ,  6- B6 ,  7- CX ,  8- DX ,  9- CLK ,  10- SR , 
+   0- stato_FSM_FFd3_18 (18)[DQ (3)] ,  1- stato_FSM_FFd3_18 (18)[CQ (2)] ,  2- fu4_19 (19)[CQ (5)] ,  3- fu4_19 (19)[BQ (4)] ,  4- fu4_19 (19)[DQ (6)] ,  5- fu4_19 (19)[AQ (3)] ,  6- stato_FSM_FFd3_18 (18)[BQ (1)] ,  7- grant_3_20 (20)[B (0)] ,  8- stato_FSM_FFd3_18 (18)[BQ (1)] ,  9- clock_BUFGP_BUFG_10 (10)[O (0)] ,  10- reset_9 (9)[I (0)] , 
+==== 19 ====
+name = fu4_19 type:<SLICEL> position <CLBLL_X16Y71> <SLICE_X26Y71>
+--------
+LUT Information:
+  LUTB6 (coda0_mux0000<1>55) O6=(A3*((~A1*(~A6*~A5))+(A1*(~A6*(A4*A2))))) init=0X000000008000D050
+  LUTC6 (coda0_mux0000<1>55_SW0) O6=((~A3*((~A6+(A6*A4))*~A5))+(A3*((~A6*(~A2+~A5))+(A6*(A4*~A5))))) init=0X0000FF003030FFFF
+  LUTD6 (coda1_mux0000<1>21_SW0) O6=((~A6*((~A1*(A4+~A3))+(A1*A2)))+(A6*((~A1*A5)+(A1*A2)))) init=0XDDDD8888DD8DDD8D
+  cfg:  ACY0:  #OFF 	AFFMUX:  AX	AOUTMUX:  #OFF	AUSED:  #OFF
+  cfg:  BCY0:  #OFF 	BFFMUX:  BX	BOUTMUX:  #OFF	BUSED:  0
+  cfg:  CCY0:  #OFF 	CFFMUX:  CX	COUTMUX:  #OFF	CUSED:  0
+  cfg:  DCY0:  #OFF 	DFFMUX:  DX	DOUTMUX:  #OFF	DUSED:  0
+  cfg:  PRECYINIT:  #OFF
+output [7]
+   0- C ,  1- D ,  2- B ,  3- AQ ,  4- BQ ,  5- CQ ,  6- DQ , 
+input [24]
+   0- B1 ,  1- B2 ,  2- B3 ,  3- B4 ,  4- B5 ,  5- B6 ,  6- C2 ,  7- C3 ,  8- C4 ,  9- C5 ,  10- C6 ,  11- D1 ,  12- D2 ,  13- D3 ,  14- D4 ,  15- D5 ,  16- D6 ,  17- AX ,  18- BX ,  19- CX ,  20- DX ,  21- CLK ,  22- CE ,  23- SR , 
+   0- ru4_23 (23)[BQ (1)] ,  1- coda0_1_21 (21)[CQ (2)] ,  2- stato_FSM_FFd3_18 (18)[BQ (1)] ,  3- fu4_19 (19)[BQ (4)] ,  4- fu4_19 (19)[C (0)] ,  5- ru4_23 (23)[AQ (0)] ,  6- fu4_19 (19)[DQ (6)] ,  7- ru4_23 (23)[DQ (3)] ,  8- fu4_19 (19)[CQ (5)] ,  9- coda0_1_21 (21)[CQ (2)] ,  10- ru4_23 (23)[CQ (2)] ,  11- ru4_23 (23)[BQ (1)] ,  12- fu4_19 (19)[BQ (4)] ,  13- ru4_23 (23)[DQ (3)] ,  14- fu4_19 (19)[DQ (6)] ,  15- fu4_19 (19)[CQ (5)] ,  16- ru4_23 (23)[CQ (2)] ,  17- ru4_23 (23)[AQ (0)] ,  18- ru4_23 (23)[BQ (1)] ,  19- ru4_23 (23)[CQ (2)] ,  20- ru4_23 (23)[DQ (3)] ,  21- clock_BUFGP_BUFG_10 (10)[O (0)] ,  22- stato_FSM_FFd3_18 (18)[BQ (1)] ,  23- reset_9 (9)[I (0)] , 
+==== 20 ====
+name = grant_3_20 type:<SLICEL> position <CLBLL_X16Y69> <SLICE_X26Y69>
+--------
+LUT Information:
+  cfg:  ACY0:  #OFF 	AFFMUX:  AX	AOUTMUX:  #OFF	AUSED:  #OFF
+  cfg:  BCY0:  #OFF 	BFFMUX:  BX	BOUTMUX:  #OFF	BUSED:  #OFF
+  cfg:  CCY0:  #OFF 	CFFMUX:  CX	COUTMUX:  #OFF	CUSED:  #OFF
+  cfg:  DCY0:  #OFF 	DFFMUX:  DX	DOUTMUX:  #OFF	DUSED:  #OFF
+  cfg:  PRECYINIT:  #OFF
+output [5]
+   0- B ,  1- AQ ,  2- BQ ,  3- CQ ,  4- DQ , 
+input [7]
+   0- AX ,  1- BX ,  2- CX ,  3- DX ,  4- CLK ,  5- CE ,  6- SR , 
+   0- coda0_4_11 (11)[CQ (1)] ,  1- coda0_1_21 (21)[CQ (2)] ,  2- coda0_1_21 (21)[AQ (3)] ,  3- coda0_4_11 (11)[BQ (0)] ,  4- clock_BUFGP_BUFG_10 (10)[O (0)] ,  5- coda0_4_11 (11)[D (3)] ,  6- reset_9 (9)[I (0)] , 
+==== 21 ====
+name = coda0_1_21 type:<SLICEL> position <CLBLL_X16Y72> <SLICE_X26Y72>
+--------
+LUT Information:
+  LUTA6 (coda0_mux0000<2>) O6=((~A2*((~A1*~A4)+(A1*(~A3+A5))))+(A2*((~A1*(~A4+A6))+(A1*(A6+(~A3+A5)))))) init=0XEEFFCEDFAAFF0A5F
+  LUTB6 (coda0_mux0000<1>212) O6=((A4*(A6*A3))+A5) init=0XFFFFF000FFFF0000
+  LUTC6 (coda0_mux0000<1>85) O6=((~A2*((A3*A5)+A6))+(A2*((~A3*(A4+A6))+(A3*(A4+(A6+A5)))))) init=0XFFFFFFFFFCF0CC00
+  LUTD6 (coda3_mux0000<1>11) O6=((~A4*(((~A2*((~A5*((~A1*~A6)+A1))+A5))+(A2*((~A5*((~A1*~A6)+A1))+(A5*A1))))*A3))+(A4*((~A2*((~A5*(~A1*(A3*~A6)))+(A5*(~A1*A3))))+(A2*(~A5*(~A1*(A3*~A6))))))) init=0X10B000A010B050F0
+  cfg:  ACY0:  #OFF 	AFFMUX:  O6	AOUTMUX:  #OFF	AUSED:  #OFF
+  cfg:  BCY0:  #OFF 	BFFMUX:  #OFF	BOUTMUX:  #OFF	BUSED:  0
+  cfg:  CCY0:  #OFF 	CFFMUX:  O6	COUTMUX:  #OFF	CUSED:  #OFF
+  cfg:  DCY0:  #OFF 	DFFMUX:  #OFF	DOUTMUX:  #OFF	DUSED:  0
+  cfg:  PRECYINIT:  #OFF
+output [4]
+   0- B ,  1- D ,  2- CQ ,  3- AQ , 
+input [23]
+   0- A1 ,  1- A2 ,  2- A3 ,  3- A4 ,  4- A5 ,  5- A6 ,  6- B3 ,  7- B4 ,  8- B5 ,  9- B6 ,  10- C2 ,  11- C3 ,  12- C4 ,  13- C5 ,  14- C6 ,  15- D1 ,  16- D2 ,  17- D3 ,  18- D4 ,  19- D5 ,  20- D6 ,  21- CLK ,  22- SR , 
+   0- coda0_1_21 (21)[AQ (3)] ,  1- coda1_4_16 (16)[BQ (1)] ,  2- coda2_4_22 (22)[C (0)] ,  3- grant_o_3_17 (17)[B (0)] ,  4- coda0_1_21 (21)[B (0)] ,  5- coda0_4_11 (11)[D (3)] ,  6- stato_FSM_FFd3_18 (18)[BQ (1)] ,  7- fu4_19 (19)[AQ (3)] ,  8- stato_FSM_FFd3_18 (18)[A (0)] ,  9- ru4_23 (23)[AQ (0)] ,  10- coda1_4_16 (16)[AQ (0)] ,  11- coda0_1_21 (21)[CQ (2)] ,  12- coda0_4_11 (11)[D (3)] ,  13- coda0_1_21 (21)[B (0)] ,  14- fu4_19 (19)[B (2)] ,  15- ru4_23 (23)[AQ (0)] ,  16- fu4_19 (19)[BQ (4)] ,  17- stato_FSM_FFd3_18 (18)[BQ (1)] ,  18- fu4_19 (19)[AQ (3)] ,  19- ru4_23 (23)[BQ (1)] ,  20- coda2_4_22 (22)[D (1)] ,  21- clock_BUFGP_BUFG_10 (10)[O (0)] ,  22- reset_9 (9)[I (0)] , 
+==== 22 ====
+name = coda2_4_22 type:<SLICEL> position <CLBLL_X16Y72> <SLICE_X27Y72>
+--------
+LUT Information:
+  LUTA6 (coda1_mux0000<1>21) O6=(((~A4*(~A1*(A3*A6)))+(A4*((~A1*(A3*A6))+(A1*A3))))+A5) init=0XFFFFF050FFFFA000
+  LUTB6 (coda2_mux0000<4>1) O6=((~A3*((~A1*(A2*A6))+(A1*((A2*A6)+A5))))+(A3*((~A1*((A2*A6)+A4))+(A1*((~A2*(A4+A5))+(A2*(A4+(A5+A6)))))))) init=0XFEEEFCCCFAAAF000
+  LUTC6 (coda0_mux0000<2>_SW4) O6=((~A1*(A4+(~A5+~A6)))+(A1*(A4+~A5))) init=0XFF00FFFFFF55FFFF
+  LUTD6 (coda1_mux0000<1>111) O6=((~A4*(A5+~A6))+(A4*A3)) init=0XF0FFF000F0FFF0FF
+  cfg:  ACY0:  #OFF 	AFFMUX:  #OFF	AOUTMUX:  #OFF	AUSED:  0
+  cfg:  BCY0:  #OFF 	BFFMUX:  O6	BOUTMUX:  #OFF	BUSED:  #OFF
+  cfg:  CCY0:  #OFF 	CFFMUX:  #OFF	COUTMUX:  #OFF	CUSED:  0
+  cfg:  DCY0:  #OFF 	DFFMUX:  #OFF	DOUTMUX:  #OFF	DUSED:  0
+  cfg:  PRECYINIT:  #OFF
+output [4]
+   0- C ,  1- D ,  2- A ,  3- BQ , 
+input [21]
+   0- A1 ,  1- A3 ,  2- A4 ,  3- A5 ,  4- A6 ,  5- B1 ,  6- B2 ,  7- B3 ,  8- B4 ,  9- B5 ,  10- B6 ,  11- C1 ,  12- C4 ,  13- C5 ,  14- C6 ,  15- D3 ,  16- D4 ,  17- D5 ,  18- D6 ,  19- CLK ,  20- SR , 
+   0- ru4_23 (23)[AQ (0)] ,  1- stato_FSM_FFd3_18 (18)[BQ (1)] ,  2- fu4_19 (19)[AQ (3)] ,  3- stato_FSM_FFd3_18 (18)[A (0)] ,  4- fu4_19 (19)[D (1)] ,  5- coda1_4_16 (16)[DQ (3)] ,  6- coda2_4_22 (22)[BQ (3)] ,  7- coda3_4_12 (12)[AQ (1)] ,  8- coda0_4_11 (11)[D (3)] ,  9- coda0_1_21 (21)[D (1)] ,  10- coda2_4_22 (22)[A (2)] ,  11- ru4_23 (23)[BQ (1)] ,  12- ru4_23 (23)[AQ (0)] ,  13- stato_FSM_FFd3_18 (18)[BQ (1)] ,  14- coda2_4_22 (22)[D (1)] ,  15- fu4_19 (19)[CQ (5)] ,  16- ru4_23 (23)[CQ (2)] ,  17- fu4_19 (19)[DQ (6)] ,  18- ru4_23 (23)[DQ (3)] ,  19- clock_BUFGP_BUFG_10 (10)[O (0)] ,  20- reset_9 (9)[I (0)] , 
+==== 23 ====
+name = ru4_23 type:<SLICEL> position <CLBLL_X16Y73> <SLICE_X27Y73>
+--------
+LUT Information:
+  LUTA6 (ru1_mux00001) O6=((~A1*(A4*A5))+(A1*(A6+(A3+(A4*A5))))) init=0XFFAAAAAAFFA0A0A0
+  LUTB6 (ru2_mux00001) O6=((~A2*(A4*A5))+(A2*(A6+(A3+(A4*A5))))) init=0XFFCCCCCCFFC0C0C0
+  LUTC6 (ru3_mux00001) O6=((~A1*(A4*A2))+(A1*(A3+(A5+(A4*A2))))) init=0XEEAAECA0EEAAECA0
+  LUTD6 (ru4_mux00001) O6=((~A2*(A4*A3))+(A2*(A5+(A6+(A4*A3))))) init=0XFCCCFCCCFCCCF000
+  cfg:  ACY0:  #OFF 	AFFMUX:  O6	AOUTMUX:  #OFF	AUSED:  #OFF
+  cfg:  BCY0:  #OFF 	BFFMUX:  O6	BOUTMUX:  #OFF	BUSED:  #OFF
+  cfg:  CCY0:  #OFF 	CFFMUX:  O6	COUTMUX:  #OFF	CUSED:  #OFF
+  cfg:  DCY0:  #OFF 	DFFMUX:  O6	DOUTMUX:  #OFF	DUSED:  #OFF
+  cfg:  PRECYINIT:  #OFF
+output [4]
+   0- AQ ,  1- BQ ,  2- CQ ,  3- DQ , 
+input [22]
+   0- A1 ,  1- A3 ,  2- A4 ,  3- A5 ,  4- A6 ,  5- B2 ,  6- B3 ,  7- B4 ,  8- B5 ,  9- B6 ,  10- C1 ,  11- C2 ,  12- C3 ,  13- C4 ,  14- C5 ,  15- D2 ,  16- D3 ,  17- D4 ,  18- D5 ,  19- D6 ,  20- CLK ,  21- SR , 
+   0- request1_0 (0)[I (0)] ,  1- stato_FSM_FFd3_18 (18)[DQ (3)] ,  2- ru4_23 (23)[AQ (0)] ,  3- stato_FSM_FFd3_18 (18)[BQ (1)] ,  4- stato_FSM_FFd3_18 (18)[CQ (2)] ,  5- request2_1 (1)[I (0)] ,  6- stato_FSM_FFd3_18 (18)[DQ (3)] ,  7- ru4_23 (23)[BQ (1)] ,  8- stato_FSM_FFd3_18 (18)[BQ (1)] ,  9- stato_FSM_FFd3_18 (18)[CQ (2)] ,  10- request3_2 (2)[I (0)] ,  11- stato_FSM_FFd3_18 (18)[BQ (1)] ,  12- stato_FSM_FFd3_18 (18)[CQ (2)] ,  13- ru4_23 (23)[CQ (2)] ,  14- stato_FSM_FFd3_18 (18)[DQ (3)] ,  15- request4_3 (3)[I (0)] ,  16- stato_FSM_FFd3_18 (18)[BQ (1)] ,  17- ru4_23 (23)[DQ (3)] ,  18- stato_FSM_FFd3_18 (18)[CQ (2)] ,  19- stato_FSM_FFd3_18 (18)[DQ (3)] ,  20- clock_BUFGP_BUFG_10 (10)[O (0)] ,  21- reset_9 (9)[I (0)] , 
+==== 24 ====
+name = XDL_DUMMY_IOI_X17Y30_ILOGIC_X1Y61_24 type:<ILOGIC> position <IOI_X17Y30> <ILOGIC_X1Y61>
+output [0]
+input [0]
+==== 25 ====
+name = XDL_DUMMY_IOI_X17Y70_ILOGIC_X1Y141_25 type:<ILOGIC> position <IOI_X17Y70> <ILOGIC_X1Y141>
+output [0]
+input [0]
+==== 26 ====
+name = XDL_DUMMY_IOI_X17Y72_ILOGIC_X1Y144_26 type:<ILOGIC> position <IOI_X17Y72> <ILOGIC_X1Y144>
+output [0]
+input [0]
+==== 27 ====
+name = XDL_DUMMY_IOI_X17Y72_OLOGIC_X1Y145_27 type:<OLOGIC> position <IOI_X17Y72> <OLOGIC_X1Y145>
+output [0]
+input [0]
+==== 28 ====
+name = XDL_DUMMY_IOI_X17Y73_OLOGIC_X1Y146_28 type:<OLOGIC> position <IOI_X17Y73> <OLOGIC_X1Y146>
+output [0]
+input [0]
+==== 29 ====
+name = XDL_DUMMY_IOI_X17Y73_OLOGIC_X1Y147_29 type:<OLOGIC> position <IOI_X17Y73> <OLOGIC_X1Y147>
+output [0]
+input [0]
+==== 30 ====
+name = XDL_DUMMY_IOI_X17Y74_ILOGIC_X1Y148_30 type:<ILOGIC> position <IOI_X17Y74> <ILOGIC_X1Y148>
+output [0]
+input [0]
+==== 31 ====
+name = XDL_DUMMY_IOI_X17Y74_ILOGIC_X1Y149_31 type:<ILOGIC> position <IOI_X17Y74> <ILOGIC_X1Y149>
+output [0]
+input [0]
+==== 32 ====
+name = XDL_DUMMY_IOI_X17Y75_ILOGIC_X1Y150_32 type:<ILOGIC> position <IOI_X17Y75> <ILOGIC_X1Y150>
+output [0]
+input [0]
+==== 33 ====
+name = XDL_DUMMY_IOI_X17Y75_OLOGIC_X1Y151_33 type:<OLOGIC> position <IOI_X17Y75> <OLOGIC_X1Y151>
+output [0]
+input [0]

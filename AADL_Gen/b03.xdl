@@ -1,0 +1,1723 @@
+# =======================================================
+# Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+# =======================================================
+#   ____  ____
+#  /   /\/   /
+# /___/  \  /    Vendor: Xilinx
+# \   \   \/     Version: P.20131013
+#  \   \         Application: xdl
+#  /   /         Filename: b03.xdl
+# /___/   /\     Timestamp: Fri Feb 02 23:24:04 2018
+# \   \  /  \ 
+#  \___\/\___\
+# 
+# 
+# XDL NCD CONVERSION MODE $Revision: 1.01$
+# time: Fri Feb 02 00:41:57 2018
+
+# =======================================================
+
+
+# =======================================================
+# The syntax for the design statement is:                
+# design <design_name> <part> <ncd version>;             
+# or                                                     
+# design <design_name> <device> <package> <speed> <ncd_version>
+# =======================================================
+design "b03" xc5vlx50tff665-2 v3.2 ,
+  cfg "
+       _DESIGN_PROP::BUS_INFO:4:OUTPUT:grant_o<3:0>
+       _DESIGN_PROP:P3_PLACE_OPTIONS:EFFORT_LEVEL:high
+       _DESIGN_PROP::P3_PLACED:
+       _DESIGN_PROP::P3_PLACE_OPTIONS:
+       _DESIGN_PROP::PIN_INFO:grant_o<0>:/b03/PACKED/b03/grant_o<0>/grant_o<0>/PAD:OUTPUT:3:grant_o<3\:0>
+       _DESIGN_PROP::PIN_INFO:grant_o<1>:/b03/PACKED/b03/grant_o<1>/grant_o<1>/PAD:OUTPUT:2:grant_o<3\:0>
+       _DESIGN_PROP::PIN_INFO:grant_o<2>:/b03/PACKED/b03/grant_o<2>/grant_o<2>/PAD:OUTPUT:1:grant_o<3\:0>
+       _DESIGN_PROP::PIN_INFO:grant_o<3>:/b03/PACKED/b03/grant_o<3>/grant_o<3>/PAD:OUTPUT:0:grant_o<3\:0>
+       _DESIGN_PROP::PK_NGMTIMESTAMP:1517550048";
+
+
+#  =======================================================
+#  The syntax for instances is:
+#      instance <name> <sitedef>, placed <tile> <site>, cfg <string> ;
+#  or
+#      instance <name> <sitedef>, unplaced, cfg <string> ;
+# 
+#  For typing convenience you can abbreviate instance to inst.
+# 
+#  For IOs there are two special keywords: bonded and unbonded
+#  that can be used to designate whether the PAD of an unplaced IO is
+#  bonded out. If neither keyword is specified, bonded is assumed.
+# 
+#  The bonding of placed IOs is determined by the site they are placed in.
+# 
+#  If you specify bonded or unbonded for an instance that is not an
+#  IOB it is ignored.
+# 
+#  Shown below are three examples for IOs. 
+#     instance IO1 IOB, unplaced ;          # This will be bonded
+#     instance IO1 IOB, unplaced bonded ;   # This will be bonded
+#     instance IO1 IOB, unplaced unbonded ; # This will be unbonded
+#  =======================================================
+inst "request1" "IOB",placed CIOB_X17Y75 G19  ,
+  cfg " DIFFI_INUSED::#OFF DIFF_TERM::#OFF IMUX::I OUSED::#OFF PADOUTUSED::#OFF
+       PULLTYPE::#OFF TUSED::#OFF INBUF:request1_IBUF: PAD:request1:
+         ISTANDARD::LVCMOS25 "
+  ;
+inst "request2" "IOB",placed CIOB_X17Y74 G12  ,
+  cfg " DIFFI_INUSED::#OFF DIFF_TERM::#OFF IMUX::I OUSED::#OFF PADOUTUSED::#OFF
+       PULLTYPE::#OFF TUSED::#OFF INBUF:request2_IBUF: PAD:request2:
+         ISTANDARD::LVCMOS25 "
+  ;
+inst "request3" "IOB",placed CIOB_X17Y72 H11  ,
+  cfg " DIFFI_INUSED::#OFF DIFF_TERM::#OFF IMUX::I OUSED::#OFF PADOUTUSED::#OFF
+       PULLTYPE::#OFF TUSED::#OFF INBUF:request3_IBUF: PAD:request3:
+         ISTANDARD::LVCMOS25 "
+  ;
+inst "request4" "IOB",placed CIOB_X17Y74 F13  ,
+  cfg " DIFFI_INUSED::#OFF DIFF_TERM::#OFF IMUX::I OUSED::#OFF PADOUTUSED::#OFF
+       PULLTYPE::#OFF TUSED::#OFF INBUF:request4_IBUF: PAD:request4:
+         ISTANDARD::LVCMOS25 "
+  ;
+inst "grant_o<0>" "IOB",placed CIOB_X17Y75 F18  ,
+  cfg " DIFFI_INUSED::#OFF DIFF_TERM::#OFF IMUX::#OFF OUSED::0 PADOUTUSED::#OFF
+       PULLTYPE::#OFF TUSED::#OFF OUTBUF:grant_o_0_OBUF: PAD:grant_o<0>:
+         DRIVE::12  OSTANDARD::LVCMOS25  SLEW::SLOW "
+  ;
+inst "grant_o<1>" "IOB",placed CIOB_X17Y73 H19  ,
+  cfg " DIFFI_INUSED::#OFF DIFF_TERM::#OFF IMUX::#OFF OUSED::0 PADOUTUSED::#OFF
+       PULLTYPE::#OFF TUSED::#OFF OUTBUF:grant_o_1_OBUF: PAD:grant_o<1>:
+         DRIVE::12  OSTANDARD::LVCMOS25  SLEW::SLOW "
+  ;
+inst "grant_o<2>" "IOB",placed CIOB_X17Y72 G11  ,
+  cfg " DIFFI_INUSED::#OFF DIFF_TERM::#OFF IMUX::#OFF OUSED::0 PADOUTUSED::#OFF
+       PULLTYPE::#OFF TUSED::#OFF OUTBUF:grant_o_2_OBUF: PAD:grant_o<2>:
+         DRIVE::12  OSTANDARD::LVCMOS25  SLEW::SLOW "
+  ;
+inst "grant_o<3>" "IOB",placed CIOB_X17Y73 H18  ,
+  cfg " DIFFI_INUSED::#OFF DIFF_TERM::#OFF IMUX::#OFF OUSED::0 PADOUTUSED::#OFF
+       PULLTYPE::#OFF TUSED::#OFF OUTBUF:grant_o_3_OBUF: PAD:grant_o<3>:
+         DRIVE::12  OSTANDARD::LVCMOS25  SLEW::SLOW "
+  ;
+inst "clock" "IOB",placed CIOB_X17Y30 AB15  ,
+  cfg " DIFFI_INUSED::#OFF DIFF_TERM::#OFF IMUX::I OUSED::#OFF PADOUTUSED::#OFF
+       PULLTYPE::#OFF TUSED::#OFF INBUF:clock_BUFGP/IBUFG: PAD:clock:
+         ISTANDARD::LVCMOS25 "
+  ;
+inst "reset" "IOB",placed CIOB_X17Y70 G10  ,
+  cfg " DIFFI_INUSED::#OFF DIFF_TERM::#OFF IMUX::I OUSED::#OFF PADOUTUSED::#OFF
+       PULLTYPE::#OFF TUSED::#OFF INBUF:reset_IBUF: PAD:reset:
+         ISTANDARD::LVCMOS25 "
+  ;
+inst "clock_BUFGP/BUFG" "BUFG",placed CLK_BUFGMUX_X47Y66 BUFGCTRL_X0Y0  ,
+  cfg " BUFG:clock_BUFGP/BUFG: "
+  ;
+inst "coda0<4>" "SLICEL",placed CLBLM_X15Y70 SLICE_X25Y70  ,
+  cfg " A5LUT::#OFF A6LUT:coda0_mux0000<3>19:#LUT:O6=((~A1*(~A4*(A6*A3)))+(A1*((~A4*((~A2*(A6*A3))+(A2*((A6*A3)+A5))))+(A4*A2))))
+       ACY0::#OFF AFF::#OFF AFFINIT::#OFF AFFMUX::#OFF AFFSR::#OFF AOUTMUX::#OFF
+       AUSED::0 B5LUT::#OFF B6LUT:coda0_mux0000<3>61:#LUT:O6=((~A1*A6)+(A1*(A4+((~A2*A6)+(A2*(A3+(A5+A6)))))))
+       BCY0::#OFF BFF:coda0_3:#FF BFFINIT::INIT0 BFFMUX::O6 BFFSR::SRLOW
+       BOUTMUX::#OFF BUSED::#OFF C5LUT::#OFF C6LUT:coda0_mux0000<4>90:#LUT:O6=((~A3*((A4*A5)+A6))+(A3*((~A4*(A2+A6))+(A4*(A2+(A6+A5))))))
+       CCY0::#OFF CEUSED::#OFF CFF:coda0_4:#FF CFFINIT::INIT0 CFFMUX::O6
+       CFFSR::SRLOW CLKINV::CLK COUTMUX::#OFF COUTUSED::#OFF CUSED::#OFF
+       D5LUT::#OFF D6LUT:coda0_mux0000<4>41:#LUT:O6=(A6*(A5+(A1+(A4+A3))))
+       DCY0::#OFF DFF::#OFF DFFINIT::#OFF DFFMUX::#OFF DFFSR::#OFF DOUTMUX::#OFF
+       DUSED::0 PRECYINIT::#OFF REVUSED::#OFF SRUSED::0 SYNC_ATTR::ASYNC
+        _ROUTETHROUGH:D:DMUX "
+  ;
+inst "coda3<4>" "SLICEL",placed CLBLM_X15Y72 SLICE_X24Y72  ,
+  cfg " A5LUT::#OFF A6LUT:coda3_mux0000<4>1:#LUT:O6=((~A4*(A2*(A3*A5)))+(A4*(((~A2*(A3*~A5))+(A2*A3))+A6)))
+       ACY0::#OFF AFF:coda3_4:#FF AFFINIT::INIT0 AFFMUX::O6 AFFSR::SRLOW
+       AOUTMUX::#OFF AUSED::#OFF B5LUT::#OFF B6LUT:coda1_mux0000<1>12:#LUT:O6=((~A4*((~A6*(A3+(A1+~A5)))+(A6*((~A3*~A5)+A1))))+(A4*((~A6*(((~A3*~A5)+A3)*~A1))+(A6*(~A3*(~A1*~A5))))))
+       BCY0::#OFF BFF::#OFF BFFINIT::#OFF BFFMUX::#OFF BFFSR::#OFF BOUTMUX::#OFF
+       BUSED::0 C5LUT::#OFF C6LUT::#OFF CCY0::#OFF CEUSED::#OFF CFF::#OFF
+       CFFINIT::#OFF CFFMUX::#OFF CFFSR::#OFF CLKINV::CLK COUTMUX::#OFF
+       COUTUSED::#OFF CUSED::#OFF D5LUT::#OFF D6LUT::#OFF DCY0::#OFF DFF::#OFF
+       DFFINIT::#OFF DFFMUX::#OFF DFFSR::#OFF DOUTMUX::#OFF DUSED::#OFF
+       PRECYINIT::#OFF REVUSED::#OFF SRUSED::0 SYNC_ATTR::ASYNC "
+  ;
+inst "coda3<3>" "SLICEL",placed CLBLM_X15Y70 SLICE_X24Y70  ,
+  cfg " A5LUT::#OFF A6LUT::#OFF ACY0::#OFF AFF::#OFF AFFINIT::#OFF AFFMUX::#OFF
+       AFFSR::#OFF AOUTMUX::#OFF AUSED::#OFF B5LUT::#OFF B6LUT:coda3_mux0000<1>1:#LUT:O6=((~A4*(A2*(A3*A6)))+(A4*(((~A2*(A3*~A6))+(A2*A3))+A5)))
+       BCY0::#OFF BFF:coda3_1:#FF BFFINIT::INIT0 BFFMUX::O6 BFFSR::SRLOW
+       BOUTMUX::#OFF BUSED::#OFF C5LUT::#OFF C6LUT:coda3_mux0000<2>1:#LUT:O6=((~A4*(A1*(A3*A6)))+(A4*(((~A1*(A3*~A6))+(A1*A3))+A5)))
+       CCY0::#OFF CEUSED::#OFF CFF:coda3_2:#FF CFFINIT::INIT0 CFFMUX::O6
+       CFFSR::SRLOW CLKINV::CLK COUTMUX::#OFF COUTUSED::#OFF CUSED::#OFF
+       D5LUT::#OFF D6LUT:coda3_mux0000<3>1:#LUT:O6=((~A2*(A5*(A3*A6)))+(A2*(((~A5*(A3*~A6))+(A5*A3))+A4)))
+       DCY0::#OFF DFF:coda3_3:#FF DFFINIT::INIT0 DFFMUX::O6 DFFSR::SRLOW
+       DOUTMUX::#OFF DUSED::#OFF PRECYINIT::#OFF REVUSED::#OFF SRUSED::0
+       SYNC_ATTR::ASYNC "
+  ;
+inst "coda2<3>" "SLICEL",placed CLBLM_X15Y72 SLICE_X25Y72  ,
+  cfg " A5LUT::#OFF A6LUT:coda2_mux0000<1>1:#LUT:O6=((~A3*((~A2*(A1*A6))+(A2*((A1*A6)+A5))))+(A3*((~A2*((A1*A6)+A4))+(A2*((~A1*(A4+A5))+(A1*(A4+(A5+A6))))))))
+       ACY0::#OFF AFF:coda2_1:#FF AFFINIT::INIT0 AFFMUX::O6 AFFSR::SRLOW
+       AOUTMUX::#OFF AUSED::#OFF B5LUT::#OFF B6LUT:coda2_mux0000<2>1:#LUT:O6=((~A1*((~A2*(A4*A6))+(A2*((A4*A6)+A5))))+(A1*((~A2*((A4*A6)+A3))+(A2*((~A4*(A3+A5))+(A4*(A3+(A5+A6))))))))
+       BCY0::#OFF BFF:coda2_2:#FF BFFINIT::INIT0 BFFMUX::O6 BFFSR::SRLOW
+       BOUTMUX::#OFF BUSED::#OFF C5LUT::#OFF C6LUT:coda2_mux0000<3>1:#LUT:O6=((~A2*((~A1*(A4*A6))+(A1*((A4*A6)+A3))))+(A2*((~A1*((A4*A6)+A5))+(A1*((~A4*(A5+A3))+(A4*(A5+(A3+A6))))))))
+       CCY0::#OFF CEUSED::#OFF CFF:coda2_3:#FF CFFINIT::INIT0 CFFMUX::O6
+       CFFSR::SRLOW CLKINV::CLK COUTMUX::#OFF COUTUSED::#OFF CUSED::#OFF
+       D5LUT::#OFF D6LUT:coda0_mux0000<3>19_SW0:#LUT:O6=(A4+(A5+A6)) DCY0::#OFF
+       DFF::#OFF DFFINIT::#OFF DFFMUX::#OFF DFFSR::#OFF DOUTMUX::#OFF DUSED::0
+       PRECYINIT::#OFF REVUSED::#OFF SRUSED::0 SYNC_ATTR::ASYNC "
+  ;
+inst "N16" "SLICEL",placed CLBLL_X16Y70 SLICE_X27Y70  ,
+  cfg " A5LUT::#OFF A6LUT:coda0_mux0000<3>30:#LUT:O6=(((~A5*(~A2+(A2*A4)))+(A5*A6))*~A3)
+       ACY0::#OFF AFF::#OFF AFFINIT::#OFF AFFMUX::#OFF AFFSR::#OFF AOUTMUX::#OFF
+       AUSED::0 B5LUT::#OFF B6LUT:coda0_mux0000<4>61:#LUT:O6=(A3*((~A1*(~A6*~A5))+(A1*(~A6*(A4*A2)))))
+       BCY0::#OFF BFF::#OFF BFFINIT::#OFF BFFMUX::#OFF BFFSR::#OFF BOUTMUX::#OFF
+       BUSED::0 C5LUT::#OFF C6LUT:coda0_mux0000<4>61_SW0:#LUT:O6=((~A6*(~A2*(A5+~A4)))+(A6*(~A2+~A3)))
+       CCY0::#OFF CEUSED::#OFF CFF::#OFF CFFINIT::#OFF CFFMUX::#OFF CFFSR::#OFF
+       CLKINV::#OFF COUTMUX::#OFF COUTUSED::#OFF CUSED::0 D5LUT::#OFF D6LUT::#OFF
+       DCY0::#OFF DFF::#OFF DFFINIT::#OFF DFFMUX::#OFF DFFSR::#OFF DOUTMUX::#OFF
+       DUSED::#OFF PRECYINIT::#OFF REVUSED::#OFF SRUSED::#OFF SYNC_ATTR::#OFF
+       "
+  ;
+inst "coda1<4>" "SLICEL",placed CLBLM_X15Y71 SLICE_X25Y71  ,
+  cfg " A5LUT::#OFF A6LUT:coda1_mux0000<1>1:#LUT:O6=((~A2*((~A4*(A1*A5))+(A4*((A1*A5)+A6))))+(A2*((~A4*((A1*A5)+A3))+(A4*((~A1*(A3+A6))+(A1*(A3+(A5+A6))))))))
+       ACY0::#OFF AFF:coda1_1:#FF AFFINIT::INIT0 AFFMUX::O6 AFFSR::SRLOW
+       AOUTMUX::#OFF AUSED::#OFF B5LUT::#OFF B6LUT:coda1_mux0000<2>1:#LUT:O6=((~A2*((~A3*(A4*A6))+(A3*((A4*A6)+A1))))+(A2*((~A3*((A4*A6)+A5))+(A3*((~A4*(A1+A5))+(A4*(A1+(A5+A6))))))))
+       BCY0::#OFF BFF:coda1_2:#FF BFFINIT::INIT0 BFFMUX::O6 BFFSR::SRLOW
+       BOUTMUX::#OFF BUSED::#OFF C5LUT::#OFF C6LUT:coda1_mux0000<3>1:#LUT:O6=((~A2*((~A5*(A4*A6))+(A5*((A4*A6)+A1))))+(A2*((~A5*((A4*A6)+A3))+(A5*((~A4*(A1+A3))+(A4*(A1+(A3+A6))))))))
+       CCY0::#OFF CEUSED::#OFF CFF:coda1_3:#FF CFFINIT::INIT0 CFFMUX::O6
+       CFFSR::SRLOW CLKINV::CLK COUTMUX::#OFF COUTUSED::#OFF CUSED::#OFF
+       D5LUT::#OFF D6LUT:coda1_mux0000<4>1:#LUT:O6=((~A1*((~A5*(A2*A3))+(A5*((A2*A3)+A6))))+(A1*((~A5*((A2*A3)+A4))+(A5*((~A2*(A4+A6))+(A2*(A4+(A3+A6))))))))
+       DCY0::#OFF DFF:coda1_4:#FF DFFINIT::INIT0 DFFMUX::O6 DFFSR::SRLOW
+       DOUTMUX::#OFF DUSED::#OFF PRECYINIT::#OFF REVUSED::#OFF SRUSED::0
+       SYNC_ATTR::ASYNC "
+  ;
+inst "grant_o_3" "SLICEL",placed CLBLM_X15Y71 SLICE_X24Y71  ,
+  cfg " A5LUT::#OFF A6LUT:coda0_mux0000<3>27:#LUT:O6=(A4+(A6*A5)) ACY0::#OFF
+       AFF:grant_o_0:#FF AFFINIT::INIT0 AFFMUX::AX AFFSR::SRLOW AOUTMUX::#OFF
+       AUSED::0 B5LUT::#OFF B6LUT:coda0_mux0000<2>_SW3:#LUT:O6=(~A4+(~A3+(A6+A5)))
+       BCY0::#OFF BFF:grant_o_1:#FF BFFINIT::INIT0 BFFMUX::BX BFFSR::SRLOW
+       BOUTMUX::#OFF BUSED::0 C5LUT::#OFF C6LUT::#OFF CCY0::#OFF CEUSED::0
+       CFF:grant_o_2:#FF CFFINIT::INIT0 CFFMUX::CX CFFSR::SRLOW CLKINV::CLK
+       COUTMUX::#OFF COUTUSED::#OFF CUSED::#OFF D5LUT::#OFF D6LUT::#OFF
+       DCY0::#OFF DFF:grant_o_3:#FF DFFINIT::INIT0 DFFMUX::DX DFFSR::SRLOW
+       DOUTMUX::#OFF DUSED::#OFF PRECYINIT::#OFF REVUSED::#OFF SRUSED::0
+       SYNC_ATTR::ASYNC "
+  ;
+inst "stato_FSM_FFd3" "SLICEL",placed CLBLL_X16Y71 SLICE_X27Y71  ,
+  cfg " A5LUT::#OFF A6LUT:coda0_mux0000<1>2111:#LUT:O6=(A2+(A1*(~A4*(~A3*(~A5*~A6)))))
+       ACY0::#OFF AFF::#OFF AFFINIT::#OFF AFFMUX::#OFF AFFSR::#OFF AOUTMUX::#OFF
+       AUSED::0 B5LUT::#OFF B6LUT:stato_FSM_FFd1-In1_INV_0:#LUT:O6=~A6 BCY0::#OFF
+       BFF:stato_FSM_FFd1:#FF BFFINIT::INIT0 BFFMUX::O6 BFFSR::SRLOW BOUTMUX::#OFF
+       BUSED::#OFF C5LUT::#OFF C6LUT::#OFF CCY0::#OFF CEUSED::#OFF CFF:stato_FSM_FFd2:#FF
+       CFFINIT::INIT0 CFFMUX::CX CFFSR::SRHIGH CLKINV::CLK COUTMUX::#OFF
+       COUTUSED::#OFF CUSED::#OFF D5LUT::#OFF D6LUT::#OFF DCY0::#OFF DFF:stato_FSM_FFd3:#FF
+       DFFINIT::INIT1 DFFMUX::DX DFFSR::SRLOW DOUTMUX::#OFF DUSED::#OFF
+       PRECYINIT::#OFF REVUSED::#OFF SRUSED::0 SYNC_ATTR::ASYNC "
+  ;
+inst "fu4" "SLICEL",placed CLBLL_X16Y71 SLICE_X26Y71  ,
+  cfg " A5LUT::#OFF A6LUT::#OFF ACY0::#OFF AFF:fu1:#FF AFFINIT::INIT0 AFFMUX::AX
+       AFFSR::SRLOW AOUTMUX::#OFF AUSED::#OFF B5LUT::#OFF B6LUT:coda0_mux0000<1>55:#LUT:O6=(A3*((~A1*(~A6*~A5))+(A1*(~A6*(A4*A2)))))
+       BCY0::#OFF BFF:fu2:#FF BFFINIT::INIT0 BFFMUX::BX BFFSR::SRLOW BOUTMUX::#OFF
+       BUSED::0 C5LUT::#OFF C6LUT:coda0_mux0000<1>55_SW0:#LUT:O6=((~A3*((~A6+(A6*A4))*~A5))+(A3*((~A6*(~A2+~A5))+(A6*(A4*~A5)))))
+       CCY0::#OFF CEUSED::0 CFF:fu3:#FF CFFINIT::INIT0 CFFMUX::CX CFFSR::SRLOW
+       CLKINV::CLK COUTMUX::#OFF COUTUSED::#OFF CUSED::0 D5LUT::#OFF D6LUT:coda1_mux0000<1>21_SW0:#LUT:O6=((~A6*((~A1*(A4+~A3))+(A1*A2)))+(A6*((~A1*A5)+(A1*A2))))
+       DCY0::#OFF DFF:fu4:#FF DFFINIT::INIT0 DFFMUX::DX DFFSR::SRLOW DOUTMUX::#OFF
+       DUSED::0 PRECYINIT::#OFF REVUSED::#OFF SRUSED::0 SYNC_ATTR::ASYNC
+       "
+  ;
+inst "grant<3>" "SLICEL",placed CLBLL_X16Y69 SLICE_X26Y69  ,
+  cfg " A5LUT::#OFF A6LUT::#OFF ACY0::#OFF AFF:grant_0:#FF AFFINIT::INIT0
+       AFFMUX::AX AFFSR::SRLOW AOUTMUX::#OFF AUSED::#OFF B5LUT::#OFF B6LUT::#OFF
+       BCY0::#OFF BFF:grant_1:#FF BFFINIT::INIT0 BFFMUX::BX BFFSR::SRLOW
+       BOUTMUX::#OFF BUSED::#OFF C5LUT::#OFF C6LUT::#OFF CCY0::#OFF CEUSED::0
+       CFF:grant_2:#FF CFFINIT::INIT0 CFFMUX::CX CFFSR::SRLOW CLKINV::CLK
+       COUTMUX::#OFF COUTUSED::#OFF CUSED::#OFF D5LUT::#OFF D6LUT::#OFF
+       DCY0::#OFF DFF:grant_3:#FF DFFINIT::INIT0 DFFMUX::DX DFFSR::SRLOW
+       DOUTMUX::#OFF DUSED::#OFF PRECYINIT::#OFF REVUSED::#OFF SRUSED::0
+       SYNC_ATTR::ASYNC _GND_SOURCE::B "
+  ;
+inst "coda0<1>" "SLICEL",placed CLBLL_X16Y72 SLICE_X26Y72  ,
+  cfg " A5LUT::#OFF A6LUT:coda0_mux0000<2>:#LUT:O6=((~A2*((~A1*~A4)+(A1*(~A3+A5))))+(A2*((~A1*(~A4+A6))+(A1*(A6+(~A3+A5))))))
+       ACY0::#OFF AFF:coda0_2:#FF AFFINIT::INIT0 AFFMUX::O6 AFFSR::SRLOW
+       AOUTMUX::#OFF AUSED::#OFF B5LUT::#OFF B6LUT:coda0_mux0000<1>212:#LUT:O6=((A4*(A6*A3))+A5)
+       BCY0::#OFF BFF::#OFF BFFINIT::#OFF BFFMUX::#OFF BFFSR::#OFF BOUTMUX::#OFF
+       BUSED::0 C5LUT::#OFF C6LUT:coda0_mux0000<1>85:#LUT:O6=((~A2*((A3*A5)+A6))+(A2*((~A3*(A4+A6))+(A3*(A4+(A6+A5))))))
+       CCY0::#OFF CEUSED::#OFF CFF:coda0_1:#FF CFFINIT::INIT0 CFFMUX::O6
+       CFFSR::SRLOW CLKINV::CLK COUTMUX::#OFF COUTUSED::#OFF CUSED::#OFF
+       D5LUT::#OFF D6LUT:coda3_mux0000<1>11:#LUT:O6=((~A4*(((~A2*((~A5*((~A1*~A6)+A1))+A5))+(A2*((~A5*((~A1*~A6)+A1))+(A5*A1))))*A3))+(A4*((~A2*((~A5*(~A1*(A3*~A6)))+(A5*(~A1*A3))))+(A2*(~A5*(~A1*(A3*~A6)))))))
+       DCY0::#OFF DFF::#OFF DFFINIT::#OFF DFFMUX::#OFF DFFSR::#OFF DOUTMUX::#OFF
+       DUSED::0 PRECYINIT::#OFF REVUSED::#OFF SRUSED::0 SYNC_ATTR::ASYNC
+       "
+  ;
+inst "coda2<4>" "SLICEL",placed CLBLL_X16Y72 SLICE_X27Y72  ,
+  cfg " A5LUT::#OFF A6LUT:coda1_mux0000<1>21:#LUT:O6=(((~A4*(~A1*(A3*A6)))+(A4*((~A1*(A3*A6))+(A1*A3))))+A5)
+       ACY0::#OFF AFF::#OFF AFFINIT::#OFF AFFMUX::#OFF AFFSR::#OFF AOUTMUX::#OFF
+       AUSED::0 B5LUT::#OFF B6LUT:coda2_mux0000<4>1:#LUT:O6=((~A3*((~A1*(A2*A6))+(A1*((A2*A6)+A5))))+(A3*((~A1*((A2*A6)+A4))+(A1*((~A2*(A4+A5))+(A2*(A4+(A5+A6))))))))
+       BCY0::#OFF BFF:coda2_4:#FF BFFINIT::INIT0 BFFMUX::O6 BFFSR::SRLOW
+       BOUTMUX::#OFF BUSED::#OFF C5LUT::#OFF C6LUT:coda0_mux0000<2>_SW4:#LUT:O6=((~A1*(A4+(~A5+~A6)))+(A1*(A4+~A5)))
+       CCY0::#OFF CEUSED::#OFF CFF::#OFF CFFINIT::#OFF CFFMUX::#OFF CFFSR::#OFF
+       CLKINV::CLK COUTMUX::#OFF COUTUSED::#OFF CUSED::0 D5LUT::#OFF D6LUT:coda1_mux0000<1>111:#LUT:O6=((~A4*(A5+~A6))+(A4*A3))
+       DCY0::#OFF DFF::#OFF DFFINIT::#OFF DFFMUX::#OFF DFFSR::#OFF DOUTMUX::#OFF
+       DUSED::0 PRECYINIT::#OFF REVUSED::#OFF SRUSED::0 SYNC_ATTR::ASYNC
+       "
+  ;
+inst "ru4" "SLICEL",placed CLBLL_X16Y73 SLICE_X27Y73  ,
+  cfg " A5LUT::#OFF A6LUT:ru1_mux00001:#LUT:O6=((~A1*(A4*A5))+(A1*(A6+(A3+(A4*A5)))))
+       ACY0::#OFF AFF:ru1:#FF AFFINIT::INIT0 AFFMUX::O6 AFFSR::SRLOW AOUTMUX::#OFF
+       AUSED::#OFF B5LUT::#OFF B6LUT:ru2_mux00001:#LUT:O6=((~A2*(A4*A5))+(A2*(A6+(A3+(A4*A5)))))
+       BCY0::#OFF BFF:ru2:#FF BFFINIT::INIT0 BFFMUX::O6 BFFSR::SRLOW BOUTMUX::#OFF
+       BUSED::#OFF C5LUT::#OFF C6LUT:ru3_mux00001:#LUT:O6=((~A1*(A4*A2))+(A1*(A3+(A5+(A4*A2)))))
+       CCY0::#OFF CEUSED::#OFF CFF:ru3:#FF CFFINIT::INIT0 CFFMUX::O6 CFFSR::SRLOW
+       CLKINV::CLK COUTMUX::#OFF COUTUSED::#OFF CUSED::#OFF D5LUT::#OFF
+       D6LUT:ru4_mux00001:#LUT:O6=((~A2*(A4*A3))+(A2*(A5+(A6+(A4*A3)))))
+       DCY0::#OFF DFF:ru4:#FF DFFINIT::INIT0 DFFMUX::O6 DFFSR::SRLOW DOUTMUX::#OFF
+       DUSED::#OFF PRECYINIT::#OFF REVUSED::#OFF SRUSED::0 SYNC_ATTR::ASYNC
+       "
+  ;
+inst "XDL_DUMMY_IOI_X17Y30_ILOGIC_X1Y61" "ILOGIC",placed IOI_X17Y30 ILOGIC_X1Y61  ,
+  cfg "_NO_USER_LOGIC::  _ROUTETHROUGH:D:O "
+  ;
+inst "XDL_DUMMY_IOI_X17Y70_ILOGIC_X1Y141" "ILOGIC",placed IOI_X17Y70 ILOGIC_X1Y141  ,
+  cfg "_NO_USER_LOGIC::  _ROUTETHROUGH:D:O "
+  ;
+inst "XDL_DUMMY_IOI_X17Y72_ILOGIC_X1Y144" "ILOGIC",placed IOI_X17Y72 ILOGIC_X1Y144  ,
+  cfg "_NO_USER_LOGIC::  _ROUTETHROUGH:D:O "
+  ;
+inst "XDL_DUMMY_IOI_X17Y72_OLOGIC_X1Y145" "OLOGIC",placed IOI_X17Y72 OLOGIC_X1Y145  ,
+  cfg "_NO_USER_LOGIC::  _ROUTETHROUGH:D1:OQ "
+  ;
+inst "XDL_DUMMY_IOI_X17Y73_OLOGIC_X1Y146" "OLOGIC",placed IOI_X17Y73 OLOGIC_X1Y146  ,
+  cfg "_NO_USER_LOGIC::  _ROUTETHROUGH:D1:OQ "
+  ;
+inst "XDL_DUMMY_IOI_X17Y73_OLOGIC_X1Y147" "OLOGIC",placed IOI_X17Y73 OLOGIC_X1Y147  ,
+  cfg "_NO_USER_LOGIC::  _ROUTETHROUGH:D1:OQ "
+  ;
+inst "XDL_DUMMY_IOI_X17Y74_ILOGIC_X1Y148" "ILOGIC",placed IOI_X17Y74 ILOGIC_X1Y148  ,
+  cfg "_NO_USER_LOGIC::  _ROUTETHROUGH:D:O "
+  ;
+inst "XDL_DUMMY_IOI_X17Y74_ILOGIC_X1Y149" "ILOGIC",placed IOI_X17Y74 ILOGIC_X1Y149  ,
+  cfg "_NO_USER_LOGIC::  _ROUTETHROUGH:D:O "
+  ;
+inst "XDL_DUMMY_IOI_X17Y75_ILOGIC_X1Y150" "ILOGIC",placed IOI_X17Y75 ILOGIC_X1Y150  ,
+  cfg "_NO_USER_LOGIC::  _ROUTETHROUGH:D:O "
+  ;
+inst "XDL_DUMMY_IOI_X17Y75_OLOGIC_X1Y151" "OLOGIC",placed IOI_X17Y75 OLOGIC_X1Y151  ,
+  cfg "_NO_USER_LOGIC::  _ROUTETHROUGH:D1:OQ "
+  ;
+
+#  ================================================
+#  The syntax for nets is:
+#     net <name> <type>,
+#       outpin <inst_name> <inst_pin>,
+#       .
+#       .
+#       inpin <inst_name> <inst_pin>,
+#       .
+#       .
+#       pip <tile> <wire0> <dir> <wire1> , # [<rt>]
+#       .
+#       .
+#       ;
+# 
+#  There are three available wire types: wire, power and ground.
+#  If no type is specified, wire is assumed.
+# 
+#  Wire indicates that this a normal wire.
+#  Power indicates that this net is tied to a DC power source.
+#  You can use "power", "vcc" or "vdd" to specify a power net.
+# 
+#  Ground indicates that this net is tied to ground.
+#  You can use "ground", or "gnd" to specify a ground net.
+# 
+#  The <dir> token will be one of the following:
+# 
+#     Symbol Description
+#     ====== ==========================================
+#       ==   Bidirectional, unbuffered.
+#       =>   Bidirectional, buffered in one direction.
+#       =-   Bidirectional, buffered in both directions.
+#       ->   Directional, buffered.
+# 
+#  No pips exist for unrouted nets.
+#  ================================================
+net "GLOBAL_LOGIC0_0" gnd, 
+  outpin "grant<3>" B ,
+  inpin "stato_FSM_FFd3" CX ,
+  pip CLBLL_X16Y69 M_B -> SITE_LOGIC_OUTS13 , 
+  pip CLBLL_X16Y71 SITE_BYP_B2 -> L_CX , 
+  pip INT_X16Y69 LOGIC_OUTS13 -> NW2BEG1 , 
+  pip INT_X16Y70 NW2MID1 -> NE2BEG1 , 
+  pip INT_X16Y71 BYP2 -> BYP_B2 , 
+  pip INT_X16Y71 NE2MID1 -> BYP2 , 
+  ;
+net "N01" , 
+  outpin "coda3<4>" B ,
+  inpin "coda3<3>" B6 ,
+  inpin "coda3<3>" C6 ,
+  inpin "coda3<3>" D6 ,
+  inpin "coda3<4>" A5 ,
+  pip CLBLM_X15Y70 SITE_IMUX_B12 -> M_B6 , 
+  pip CLBLM_X15Y70 SITE_IMUX_B23 -> M_D6 , 
+  pip CLBLM_X15Y70 SITE_IMUX_B35 -> M_C6 , 
+  pip CLBLM_X15Y72 M_B -> SITE_LOGIC_OUTS13 , 
+  pip CLBLM_X15Y72 SITE_IMUX_B26 -> M_A5 , 
+  pip INT_X15Y70 CTRL1 -> CTRL_BOUNCE1 , 
+  pip INT_X15Y70 CTRL_BOUNCE1 -> IMUX_B23 , 
+  pip INT_X15Y70 CTRL_BOUNCE1 -> IMUX_B35 , 
+  pip INT_X15Y70 FAN2 -> FAN_BOUNCE2 , 
+  pip INT_X15Y70 FAN_BOUNCE2 -> IMUX_B12 , 
+  pip INT_X15Y70 SR2END1 -> CTRL1 , 
+  pip INT_X15Y70 SR2END1 -> FAN2 , 
+  pip INT_X15Y72 LOGIC_OUTS13 -> IMUX_B26 , 
+  pip INT_X15Y72 LOGIC_OUTS13 -> SR2BEG1 , 
+  ;
+net "N10" , 
+  outpin "fu4" C ,
+  inpin "fu4" B5 ,
+  pip CLBLL_X16Y71 M_C -> SITE_LOGIC_OUTS14 , 
+  pip CLBLL_X16Y71 SITE_IMUX_B14 -> M_B5 , 
+  pip INT_X16Y71 LOGIC_OUTS14 -> SR2BEG1 , 
+  pip INT_X16Y71 SR2BEG1 -> IMUX_B14 , 
+  ;
+net "N12" , 
+  outpin "coda2<3>" D ,
+  inpin "coda0<4>" A5 ,
+  pip CLBLM_X15Y70 SITE_IMUX_B2 -> L_A5 , 
+  pip CLBLM_X15Y72 L_D -> SITE_LOGIC_OUTS11 , 
+  pip INT_X15Y70 SL2END1 -> IMUX_B2 , 
+  pip INT_X15Y72 LOGIC_OUTS11 -> SL2BEG1 , 
+  ;
+net "N14" , 
+  outpin "fu4" D ,
+  inpin "coda2<4>" A6 ,
+  pip CLBLL_X16Y71 M_D -> SITE_LOGIC_OUTS15 , 
+  pip CLBLL_X16Y72 SITE_IMUX_B0 -> L_A6 , 
+  pip INT_X16Y72 LOGIC_OUTS_N15 -> WR2BEG_N2 , 
+  pip INT_X16Y72 WR2BEG_N2 -> IMUX_B0 , 
+  ;
+net "N16" , 
+  outpin "N16" C ,
+  inpin "N16" B5 ,
+  pip CLBLL_X16Y70 L_C -> SITE_LOGIC_OUTS10 , 
+  pip CLBLL_X16Y70 SITE_IMUX_B38 -> L_B5 , 
+  pip INT_X16Y70 LOGIC_OUTS10 -> SR2BEG1 , 
+  pip INT_X16Y70 SR2BEG1 -> IMUX_B38 , 
+  ;
+net "N20" , 
+  outpin "coda0<1>" B ,
+  inpin "coda0<1>" A5 ,
+  inpin "coda0<1>" C5 ,
+  inpin "coda0<4>" C5 ,
+  pip CLBLL_X16Y72 M_B -> SITE_LOGIC_OUTS13 , 
+  pip CLBLL_X16Y72 SITE_IMUX_B26 -> M_A5 , 
+  pip CLBLL_X16Y72 SITE_IMUX_B33 -> M_C5 , 
+  pip CLBLM_X15Y70 SITE_IMUX_B9 -> L_C5 , 
+  pip INT_X15Y70 SW2MID1 -> IMUX_B9 , 
+  pip INT_X15Y71 SW2END1 -> SW2BEG1 , 
+  pip INT_X16Y72 ER2BEG2 -> IMUX_B33 , 
+  pip INT_X16Y72 LOGIC_OUTS13 -> ER2BEG2 , 
+  pip INT_X16Y72 LOGIC_OUTS13 -> IMUX_B26 , 
+  pip INT_X16Y72 LOGIC_OUTS13 -> SW2BEG1 , 
+  ;
+net "N22" , 
+  outpin "stato_FSM_FFd3" A ,
+  inpin "coda0<1>" B5 ,
+  inpin "coda0<4>" B4 ,
+  inpin "coda2<4>" A5 ,
+  inpin "coda3<3>" B5 ,
+  inpin "coda3<3>" C5 ,
+  inpin "coda3<3>" D4 ,
+  inpin "coda3<4>" A6 ,
+  pip CLBLL_X16Y71 L_A -> SITE_LOGIC_OUTS8 , 
+  pip CLBLL_X16Y72 SITE_IMUX_B14 -> M_B5 , 
+  pip CLBLL_X16Y72 SITE_IMUX_B2 -> L_A5 , 
+  pip CLBLM_X15Y70 SITE_IMUX_B14 -> M_B5 , 
+  pip CLBLM_X15Y70 SITE_IMUX_B22 -> M_D4 , 
+  pip CLBLM_X15Y70 SITE_IMUX_B33 -> M_C5 , 
+  pip CLBLM_X15Y70 SITE_IMUX_B37 -> L_B4 , 
+  pip CLBLM_X15Y72 SITE_IMUX_B24 -> M_A6 , 
+  pip INT_X15Y70 BYP2 -> BYP_BOUNCE2 , 
+  pip INT_X15Y70 BYP6 -> BYP_BOUNCE6 , 
+  pip INT_X15Y70 BYP_BOUNCE2 -> IMUX_B37 , 
+  pip INT_X15Y70 BYP_BOUNCE6 -> IMUX_B14 , 
+  pip INT_X15Y70 BYP_BOUNCE6 -> IMUX_B33 , 
+  pip INT_X15Y70 WR2MID2 -> BYP2 , 
+  pip INT_X15Y70 WR2MID2 -> BYP6 , 
+  pip INT_X15Y70 WR2MID2 -> IMUX_B22 , 
+  pip INT_X15Y72 WL2MID0 -> IMUX_B24 , 
+  pip INT_X16Y71 LOGIC_OUTS8 -> NE2BEG0 , 
+  pip INT_X16Y71 LOGIC_OUTS8 -> NR2BEG_N2 , 
+  pip INT_X16Y71 LOGIC_OUTS8 -> WR2BEG_N2 , 
+  pip INT_X16Y71 NR2MID2 -> WL2BEG_S0 , 
+  pip INT_X16Y72 NE2MID0 -> IMUX_B14 , 
+  pip INT_X16Y72 NE2MID0 -> IMUX_B2 , 
+  ;
+net "N25" , 
+  outpin "coda0<1>" D ,
+  inpin "coda1<4>" A5 ,
+  inpin "coda1<4>" B5 ,
+  inpin "coda1<4>" C3 ,
+  inpin "coda1<4>" D3 ,
+  inpin "coda2<3>" A5 ,
+  inpin "coda2<3>" B5 ,
+  inpin "coda2<3>" C3 ,
+  inpin "coda2<4>" B5 ,
+  pip CLBLL_X16Y72 M_D -> SITE_LOGIC_OUTS15 , 
+  pip CLBLL_X16Y72 SITE_IMUX_B38 -> L_B5 , 
+  pip CLBLM_X15Y71 SITE_IMUX_B2 -> L_A5 , 
+  pip CLBLM_X15Y71 SITE_IMUX_B38 -> L_B5 , 
+  pip CLBLM_X15Y71 SITE_IMUX_B44 -> L_D3 , 
+  pip CLBLM_X15Y71 SITE_IMUX_B8 -> L_C3 , 
+  pip CLBLM_X15Y72 SITE_IMUX_B2 -> L_A5 , 
+  pip CLBLM_X15Y72 SITE_IMUX_B38 -> L_B5 , 
+  pip CLBLM_X15Y72 SITE_IMUX_B8 -> L_C3 , 
+  pip INT_X15Y71 WR2MID1 -> IMUX_B2 , 
+  pip INT_X15Y71 WR2MID1 -> IMUX_B38 , 
+  pip INT_X15Y71 WR2MID1 -> IMUX_B44 , 
+  pip INT_X15Y71 WR2MID1 -> IMUX_B8 , 
+  pip INT_X15Y72 FAN1 -> FAN_BOUNCE1 , 
+  pip INT_X15Y72 FAN_BOUNCE1 -> IMUX_B2 , 
+  pip INT_X15Y72 FAN_BOUNCE1 -> IMUX_B38 , 
+  pip INT_X15Y72 FAN_BOUNCE1 -> IMUX_B8 , 
+  pip INT_X15Y72 SW2END0 -> FAN1 , 
+  pip INT_X16Y71 SR2MID2 -> WR2BEG1 , 
+  pip INT_X16Y72 BYP6 -> BYP_BOUNCE6 , 
+  pip INT_X16Y72 BYP_BOUNCE6 -> IMUX_B38 , 
+  pip INT_X16Y72 LOGIC_OUTS15 -> SR2BEG2 , 
+  pip INT_X16Y72 SR2BEG2 -> BYP6 , 
+  pip INT_X16Y73 LOGIC_OUTS_N15 -> SW2BEG0 , 
+  ;
+net "N4" , 
+  outpin "grant_o_3" B ,
+  inpin "coda0<1>" A4 ,
+  pip CLBLL_X16Y72 SITE_IMUX_B25 -> M_A4 , 
+  pip CLBLM_X15Y71 M_B -> SITE_LOGIC_OUTS13 , 
+  pip INT_X15Y71 LOGIC_OUTS13 -> ER2BEG2 , 
+  pip INT_X16Y71 ER2MID2 -> FAN7 , 
+  pip INT_X16Y71 FAN7 -> FAN_BOUNCE7 , 
+  pip INT_X16Y72 FAN_BOUNCE_N7 -> IMUX_B25 , 
+  ;
+net "N5" , 
+  outpin "coda2<4>" C ,
+  inpin "coda0<1>" A3 ,
+  pip CLBLL_X16Y72 L_C -> SITE_LOGIC_OUTS10 , 
+  pip CLBLL_X16Y72 SITE_IMUX_B27 -> M_A3 , 
+  pip INT_X16Y72 LOGIC_OUTS10 -> IMUX_B27 , 
+  ;
+net "N7" , 
+  outpin "coda2<4>" D ,
+  inpin "coda0<1>" D6 ,
+  inpin "coda2<4>" C6 ,
+  inpin "coda3<4>" B5 ,
+  pip CLBLL_X16Y72 L_D -> SITE_LOGIC_OUTS11 , 
+  pip CLBLL_X16Y72 SITE_IMUX_B11 -> L_C6 , 
+  pip CLBLL_X16Y72 SITE_IMUX_B23 -> M_D6 , 
+  pip CLBLM_X15Y72 SITE_IMUX_B14 -> M_B5 , 
+  pip INT_X15Y72 WR2MID1 -> IMUX_B14 , 
+  pip INT_X16Y72 LOGIC_OUTS11 -> IMUX_B11 , 
+  pip INT_X16Y72 LOGIC_OUTS11 -> IMUX_B23 , 
+  pip INT_X16Y72 LOGIC_OUTS11 -> WR2BEG1 , 
+  ;
+net "N8" , 
+  outpin "coda2<4>" A ,
+  inpin "coda1<4>" A6 ,
+  inpin "coda1<4>" B6 ,
+  inpin "coda1<4>" C6 ,
+  inpin "coda1<4>" D6 ,
+  inpin "coda2<3>" A6 ,
+  inpin "coda2<3>" B6 ,
+  inpin "coda2<3>" C6 ,
+  inpin "coda2<4>" B6 ,
+  pip CLBLL_X16Y72 L_A -> SITE_LOGIC_OUTS8 , 
+  pip CLBLL_X16Y72 SITE_IMUX_B36 -> L_B6 , 
+  pip CLBLM_X15Y71 SITE_IMUX_B0 -> L_A6 , 
+  pip CLBLM_X15Y71 SITE_IMUX_B11 -> L_C6 , 
+  pip CLBLM_X15Y71 SITE_IMUX_B36 -> L_B6 , 
+  pip CLBLM_X15Y71 SITE_IMUX_B47 -> L_D6 , 
+  pip CLBLM_X15Y72 SITE_IMUX_B0 -> L_A6 , 
+  pip CLBLM_X15Y72 SITE_IMUX_B11 -> L_C6 , 
+  pip CLBLM_X15Y72 SITE_IMUX_B36 -> L_B6 , 
+  pip INT_X15Y71 SW2END0 -> IMUX_B0 , 
+  pip INT_X15Y71 SW2END0 -> IMUX_B36 , 
+  pip INT_X15Y71 WS2MID_S0 -> IMUX_B11 , 
+  pip INT_X15Y71 WS2MID_S0 -> IMUX_B47 , 
+  pip INT_X15Y72 WN2END_S0 -> IMUX_B11 , 
+  pip INT_X15Y72 WN2MID0 -> IMUX_B0 , 
+  pip INT_X15Y72 WN2MID0 -> IMUX_B36 , 
+  pip INT_X15Y72 WS2MID0 -> WS2MID_FAKE0 , 
+  pip INT_X16Y72 LOGIC_OUTS8 -> IMUX_B36 , 
+  pip INT_X16Y72 LOGIC_OUTS8 -> SW2BEG0 , 
+  pip INT_X16Y72 LOGIC_OUTS8 -> WN2BEG0 , 
+  pip INT_X16Y72 LOGIC_OUTS8 -> WS2BEG0 , 
+  ;
+net "clock" , cfg " _BELSIG:PAD,PAD,clock:clock",
+  ;
+net "clock_BUFGP" , 
+  outpin "clock_BUFGP/BUFG" O ,
+  inpin "coda0<1>" CLK ,
+  inpin "coda0<4>" CLK ,
+  inpin "coda1<4>" CLK ,
+  inpin "coda2<3>" CLK ,
+  inpin "coda2<4>" CLK ,
+  inpin "coda3<3>" CLK ,
+  inpin "coda3<4>" CLK ,
+  inpin "fu4" CLK ,
+  inpin "grant<3>" CLK ,
+  inpin "grant_o_3" CLK ,
+  inpin "ru4" CLK ,
+  inpin "stato_FSM_FFd3" CLK ,
+  pip CLBLL_X16Y69 SITE_CLK_B1 -> M_CLK , 
+  pip CLBLL_X16Y71 SITE_CLK_B0 -> L_CLK , 
+  pip CLBLL_X16Y71 SITE_CLK_B1 -> M_CLK , 
+  pip CLBLL_X16Y72 SITE_CLK_B0 -> L_CLK , 
+  pip CLBLL_X16Y72 SITE_CLK_B1 -> M_CLK , 
+  pip CLBLL_X16Y73 SITE_CLK_B0 -> L_CLK , 
+  pip CLBLM_X15Y70 SITE_CLK_B0 -> L_CLK , 
+  pip CLBLM_X15Y70 SITE_CLK_B1 -> M_CLK , 
+  pip CLBLM_X15Y71 SITE_CLK_B0 -> L_CLK , 
+  pip CLBLM_X15Y71 SITE_CLK_B1 -> M_CLK , 
+  pip CLBLM_X15Y72 SITE_CLK_B0 -> L_CLK , 
+  pip CLBLM_X15Y72 SITE_CLK_B1 -> M_CLK , 
+  pip CLK_BUFGMUX_X47Y66 CLK_BUFGMUX_POSTMUX_GCLKP0 -> CLK_BUFGMUX_GCLKP0 , 
+  pip CLK_HROW_X17Y69 CLK_HROW_GCLK_BUF0 -> CLK_HROW_HCLKL_P0 , 
+  pip HCLK_X15Y69 HCLK_G_HCLK_P0 -> HCLK_LEAF_GCLK0 , 
+  pip HCLK_X16Y69 HCLK_G_HCLK_P0 -> HCLK_LEAF_GCLK0 , 
+  pip INT_X15Y70 GCLK0 -> CLK_B0 , 
+  pip INT_X15Y70 GCLK0 -> CLK_B1 , 
+  pip INT_X15Y71 GCLK0 -> CLK_B0 , 
+  pip INT_X15Y71 GCLK0 -> CLK_B1 , 
+  pip INT_X15Y72 GCLK0 -> CLK_B0 , 
+  pip INT_X15Y72 GCLK0 -> CLK_B1 , 
+  pip INT_X16Y69 GCLK0 -> CLK_B1 , 
+  pip INT_X16Y71 GCLK0 -> CLK_B0 , 
+  pip INT_X16Y71 GCLK0 -> CLK_B1 , 
+  pip INT_X16Y72 GCLK0 -> CLK_B0 , 
+  pip INT_X16Y72 GCLK0 -> CLK_B1 , 
+  pip INT_X16Y73 GCLK0 -> CLK_B0 , 
+  ;
+net "clock_BUFGP/IBUFG" , 
+  outpin "clock" I ,
+  inpin "clock_BUFGP/BUFG" I0 ,
+  pip CLK_BUFGMUX_X47Y66 CLK_BUFGMUX_MUXED_IN_CLKB_P0 -> CLK_BUFGMUX_PREMUX0_CLK0 , 
+  pip CLK_BUFGMUX_X47Y66 CLK_BUFGMUX_PREMUX0_CLK0 -> CLK_BUFGMUX_CLKP0_0 , 
+  pip CLK_IOB_B_X17Y30 CLK_IOB_CLK_BUF0 -> CLK_IOB_MUXED_CLKOUT0 , 
+  pip CLK_IOB_B_X17Y30 CLK_IOB_PAD_CLK0 -> CLK_IOB_CLK_BUF0 , 
+  pip IOI_X17Y30 IOI_D0 -> IOI_I0 ,  #  _ROUTETHROUGH:D:O "XDL_DUMMY_IOI_X17Y30_ILOGIC_X1Y61" D -> O
+  pip IOI_X17Y30 IOI_I0 -> IOI_I_2GCLK0 , 
+  pip IOI_X17Y30 IOI_IBUF0 -> IOI_D0 , 
+  ;
+net "coda0<1>" , 
+  outpin "coda0<1>" CQ ,
+  inpin "coda0<1>" C3 ,
+  inpin "coda1<4>" A1 ,
+  inpin "fu4" B2 ,
+  inpin "fu4" C5 ,
+  inpin "grant<3>" BX ,
+  pip CLBLL_X16Y69 SITE_BYP_B4 -> M_BX , 
+  pip CLBLL_X16Y71 SITE_IMUX_B16 -> M_B2 , 
+  pip CLBLL_X16Y71 SITE_IMUX_B33 -> M_C5 , 
+  pip CLBLL_X16Y72 M_CQ -> SITE_LOGIC_OUTS6 , 
+  pip CLBLL_X16Y72 SITE_IMUX_B32 -> M_C3 , 
+  pip CLBLM_X15Y71 SITE_IMUX_B5 -> L_A1 , 
+  pip INT_X15Y71 NR2MID2 -> IMUX_B5 , 
+  pip INT_X15Y71 WR2MID0 -> NR2BEG_N2 , 
+  pip INT_X16Y69 BYP4 -> BYP_B4 , 
+  pip INT_X16Y69 FAN2 -> FAN_BOUNCE2 , 
+  pip INT_X16Y69 FAN_BOUNCE2 -> BYP4 , 
+  pip INT_X16Y69 SL2END1 -> FAN2 , 
+  pip INT_X16Y71 FAN3 -> FAN_BOUNCE3 , 
+  pip INT_X16Y71 FAN_BOUNCE3 -> IMUX_B33 , 
+  pip INT_X16Y71 SE2MID2 -> IMUX_B16 , 
+  pip INT_X16Y71 SE2MID2 -> SL2BEG1 , 
+  pip INT_X16Y71 SL2MID1 -> FAN3 , 
+  pip INT_X16Y71 SL2MID1 -> WR2BEG0 , 
+  pip INT_X16Y72 FAN4 -> FAN_BOUNCE4 , 
+  pip INT_X16Y72 FAN_BOUNCE4 -> IMUX_B32 , 
+  pip INT_X16Y72 LOGIC_OUTS6 -> NR2BEG1 , 
+  pip INT_X16Y72 LOGIC_OUTS6 -> SE2BEG2 , 
+  pip INT_X16Y72 LOGIC_OUTS6 -> SL2BEG1 , 
+  pip INT_X16Y72 NR2BEG1 -> FAN4 , 
+  ;
+net "coda0<2>" , 
+  outpin "coda0<1>" AQ ,
+  inpin "coda0<1>" A1 ,
+  inpin "coda1<4>" B2 ,
+  inpin "grant<3>" CX ,
+  pip CLBLL_X16Y69 SITE_BYP_B3 -> M_CX , 
+  pip CLBLL_X16Y72 M_AQ -> SITE_LOGIC_OUTS4 , 
+  pip CLBLL_X16Y72 SITE_IMUX_B29 -> M_A1 , 
+  pip CLBLM_X15Y71 SITE_IMUX_B40 -> L_B2 , 
+  pip INT_X15Y71 FAN3 -> FAN_BOUNCE3 , 
+  pip INT_X15Y71 FAN_BOUNCE3 -> IMUX_B40 , 
+  pip INT_X15Y71 WS2END1 -> FAN3 , 
+  pip INT_X16Y69 BYP3 -> BYP_B3 , 
+  pip INT_X16Y69 FAN_BOUNCE_S0 -> BYP3 , 
+  pip INT_X16Y70 FAN0 -> FAN_BOUNCE0 , 
+  pip INT_X16Y70 SR2END0 -> FAN0 , 
+  pip INT_X16Y72 EL2BEG1 -> FAN5 , 
+  pip INT_X16Y72 FAN5 -> FAN_BOUNCE5 , 
+  pip INT_X16Y72 FAN_BOUNCE5 -> IMUX_B29 , 
+  pip INT_X16Y72 LOGIC_OUTS4 -> EL2BEG1 , 
+  pip INT_X16Y72 LOGIC_OUTS4 -> SR2BEG0 , 
+  pip INT_X16Y72 LOGIC_OUTS4 -> WS2BEG1 , 
+  ;
+net "coda0<3>" , 
+  outpin "coda0<4>" BQ ,
+  inpin "coda0<4>" B1 ,
+  inpin "coda1<4>" C2 ,
+  inpin "grant<3>" DX ,
+  pip CLBLL_X16Y69 SITE_BYP_B6 -> M_DX , 
+  pip CLBLM_X15Y70 L_BQ -> SITE_LOGIC_OUTS1 , 
+  pip CLBLM_X15Y70 SITE_IMUX_B41 -> L_B1 , 
+  pip CLBLM_X15Y71 SITE_IMUX_B7 -> L_C2 , 
+  pip INT_X15Y70 BYP5 -> BYP_BOUNCE5 , 
+  pip INT_X15Y70 BYP_BOUNCE5 -> IMUX_B41 , 
+  pip INT_X15Y70 LOGIC_OUTS1 -> BYP5 , 
+  pip INT_X15Y70 LOGIC_OUTS1 -> NW2BEG0 , 
+  pip INT_X15Y70 LOGIC_OUTS1 -> SE2BEG1 , 
+  pip INT_X15Y71 NW2MID0 -> IMUX_B7 , 
+  pip INT_X16Y69 BYP6 -> BYP_B6 , 
+  pip INT_X16Y69 FAN5 -> FAN_BOUNCE5 , 
+  pip INT_X16Y69 FAN_BOUNCE5 -> BYP6 , 
+  pip INT_X16Y69 SE2END1 -> FAN5 , 
+  ;
+net "coda0<4>" , 
+  outpin "coda0<4>" CQ ,
+  inpin "N16" B2 ,
+  inpin "N16" C2 ,
+  inpin "coda0<4>" C4 ,
+  inpin "coda1<4>" D2 ,
+  inpin "grant<3>" AX ,
+  pip CLBLL_X16Y69 SITE_BYP_B1 -> M_AX , 
+  pip CLBLL_X16Y70 SITE_IMUX_B40 -> L_B2 , 
+  pip CLBLL_X16Y70 SITE_IMUX_B7 -> L_C2 , 
+  pip CLBLM_X15Y70 L_CQ -> SITE_LOGIC_OUTS2 , 
+  pip CLBLM_X15Y70 SITE_IMUX_B10 -> L_C4 , 
+  pip CLBLM_X15Y71 SITE_IMUX_B43 -> L_D2 , 
+  pip INT_X15Y69 SW2MID2 -> SE2BEG2 , 
+  pip INT_X15Y70 EL2BEG2 -> FAN7 , 
+  pip INT_X15Y70 FAN7 -> FAN_BOUNCE7 , 
+  pip INT_X15Y70 LOGIC_OUTS2 -> EL2BEG2 , 
+  pip INT_X15Y70 LOGIC_OUTS2 -> EN2BEG1 , 
+  pip INT_X15Y70 LOGIC_OUTS2 -> IMUX_B10 , 
+  pip INT_X15Y70 LOGIC_OUTS2 -> SW2BEG2 , 
+  pip INT_X15Y71 FAN_BOUNCE_N7 -> IMUX_B43 , 
+  pip INT_X16Y68 FAN7 -> FAN_BOUNCE7 , 
+  pip INT_X16Y68 SE2END2 -> FAN7 , 
+  pip INT_X16Y69 BYP1 -> BYP_B1 , 
+  pip INT_X16Y69 FAN_BOUNCE_N7 -> BYP1 , 
+  pip INT_X16Y70 EN2MID1 -> FAN2 , 
+  pip INT_X16Y70 EN2MID1 -> FAN3 , 
+  pip INT_X16Y70 FAN2 -> FAN_BOUNCE2 , 
+  pip INT_X16Y70 FAN3 -> FAN_BOUNCE3 , 
+  pip INT_X16Y70 FAN_BOUNCE2 -> IMUX_B7 , 
+  pip INT_X16Y70 FAN_BOUNCE3 -> IMUX_B40 , 
+  ;
+net "coda0_mux0000<1>55" , 
+  outpin "fu4" B ,
+  inpin "coda0<1>" C6 ,
+  pip CLBLL_X16Y71 M_B -> SITE_LOGIC_OUTS13 , 
+  pip CLBLL_X16Y72 SITE_IMUX_B35 -> M_C6 , 
+  pip INT_X16Y71 LOGIC_OUTS13 -> NL2BEG2 , 
+  pip INT_X16Y72 NL2MID2 -> IMUX_B35 , 
+  ;
+net "coda0_mux0000<3>19" , 
+  outpin "coda0<4>" A ,
+  inpin "coda0<4>" B6 ,
+  pip CLBLM_X15Y70 L_A -> SITE_LOGIC_OUTS8 , 
+  pip CLBLM_X15Y70 SITE_IMUX_B36 -> L_B6 , 
+  pip INT_X15Y70 LOGIC_OUTS8 -> IMUX_B36 , 
+  ;
+net "coda0_mux0000<3>27" , 
+  outpin "grant_o_3" A ,
+  inpin "coda0<4>" B3 ,
+  pip CLBLM_X15Y70 SITE_IMUX_B39 -> L_B3 , 
+  pip CLBLM_X15Y71 M_A -> SITE_LOGIC_OUTS12 , 
+  pip INT_X15Y70 ER2BEG_S0 -> FAN6 , 
+  pip INT_X15Y70 FAN6 -> FAN_BOUNCE6 , 
+  pip INT_X15Y70 FAN_BOUNCE6 -> IMUX_B39 , 
+  pip INT_X15Y70 LOGIC_OUTS_S12 -> ER2BEG_S0 , 
+  ;
+net "coda0_mux0000<3>30" , 
+  outpin "N16" A ,
+  inpin "coda0<4>" B5 ,
+  pip CLBLL_X16Y70 L_A -> SITE_LOGIC_OUTS8 , 
+  pip CLBLM_X15Y70 SITE_IMUX_B38 -> L_B5 , 
+  pip INT_X15Y70 WL2MID1 -> IMUX_B38 , 
+  pip INT_X16Y70 LOGIC_OUTS8 -> WL2BEG1 , 
+  ;
+net "coda0_mux0000<4>61" , 
+  outpin "N16" B ,
+  inpin "coda0<4>" C6 ,
+  pip CLBLL_X16Y70 L_B -> SITE_LOGIC_OUTS9 , 
+  pip CLBLM_X15Y70 SITE_IMUX_B11 -> L_C6 , 
+  pip INT_X15Y70 NR2MID2 -> IMUX_B11 , 
+  pip INT_X15Y70 WR2MID0 -> NR2BEG_N2 , 
+  pip INT_X16Y70 LOGIC_OUTS9 -> WR2BEG0 , 
+  ;
+net "coda1<1>" , 
+  outpin "coda1<4>" AQ ,
+  inpin "coda0<1>" C2 ,
+  inpin "coda1<4>" A4 ,
+  inpin "coda2<3>" A2 ,
+  pip CLBLL_X16Y72 SITE_IMUX_B31 -> M_C2 , 
+  pip CLBLM_X15Y71 L_AQ -> SITE_LOGIC_OUTS0 , 
+  pip CLBLM_X15Y71 SITE_IMUX_B1 -> L_A4 , 
+  pip CLBLM_X15Y72 SITE_IMUX_B4 -> L_A2 , 
+  pip INT_X15Y71 LOGIC_OUTS0 -> EN2BEG0 , 
+  pip INT_X15Y71 LOGIC_OUTS0 -> IMUX_B1 , 
+  pip INT_X15Y71 LOGIC_OUTS0 -> NW2BEG0 , 
+  pip INT_X15Y72 BYP5 -> BYP_BOUNCE5 , 
+  pip INT_X15Y72 BYP_BOUNCE5 -> IMUX_B4 , 
+  pip INT_X15Y72 NW2MID0 -> BYP5 , 
+  pip INT_X16Y72 EN2END0 -> IMUX_B31 , 
+  ;
+net "coda1<2>" , 
+  outpin "coda1<4>" BQ ,
+  inpin "coda0<1>" A2 ,
+  inpin "coda1<4>" B4 ,
+  inpin "coda2<3>" B2 ,
+  pip CLBLL_X16Y72 SITE_IMUX_B28 -> M_A2 , 
+  pip CLBLM_X15Y71 L_BQ -> SITE_LOGIC_OUTS1 , 
+  pip CLBLM_X15Y71 SITE_IMUX_B37 -> L_B4 , 
+  pip CLBLM_X15Y72 SITE_IMUX_B40 -> L_B2 , 
+  pip INT_X15Y71 LOGIC_OUTS1 -> IMUX_B37 , 
+  pip INT_X15Y71 LOGIC_OUTS1 -> NE2BEG0 , 
+  pip INT_X15Y71 LOGIC_OUTS1 -> NL2BEG1 , 
+  pip INT_X15Y72 FAN5 -> FAN_BOUNCE5 , 
+  pip INT_X15Y72 FAN_BOUNCE5 -> IMUX_B40 , 
+  pip INT_X15Y72 NL2MID1 -> FAN5 , 
+  pip INT_X16Y72 BYP5 -> BYP_BOUNCE5 , 
+  pip INT_X16Y72 BYP_BOUNCE5 -> IMUX_B28 , 
+  pip INT_X16Y72 NE2END0 -> BYP5 , 
+  ;
+net "coda1<3>" , 
+  outpin "coda1<4>" CQ ,
+  inpin "coda0<4>" A1 ,
+  inpin "coda1<4>" C4 ,
+  inpin "coda2<3>" C1 ,
+  pip CLBLM_X15Y70 SITE_IMUX_B5 -> L_A1 , 
+  pip CLBLM_X15Y71 L_CQ -> SITE_LOGIC_OUTS2 , 
+  pip CLBLM_X15Y71 SITE_IMUX_B10 -> L_C4 , 
+  pip CLBLM_X15Y72 SITE_IMUX_B6 -> L_C1 , 
+  pip INT_X15Y70 SW2MID2 -> IMUX_B5 , 
+  pip INT_X15Y71 LOGIC_OUTS2 -> IMUX_B10 , 
+  pip INT_X15Y71 LOGIC_OUTS2 -> NE2BEG1 , 
+  pip INT_X15Y71 LOGIC_OUTS2 -> SW2BEG2 , 
+  pip INT_X15Y72 BYP2 -> BYP_BOUNCE2 , 
+  pip INT_X15Y72 BYP_BOUNCE2 -> IMUX_B6 , 
+  pip INT_X15Y72 NE2MID1 -> BYP2 , 
+  ;
+net "coda1<4>" , 
+  outpin "coda1<4>" DQ ,
+  inpin "coda0<4>" C3 ,
+  inpin "coda1<4>" D5 ,
+  inpin "coda2<4>" B1 ,
+  pip CLBLL_X16Y72 SITE_IMUX_B41 -> L_B1 , 
+  pip CLBLM_X15Y70 SITE_IMUX_B8 -> L_C3 , 
+  pip CLBLM_X15Y71 L_DQ -> SITE_LOGIC_OUTS3 , 
+  pip CLBLM_X15Y71 SITE_IMUX_B45 -> L_D5 , 
+  pip INT_X15Y70 SL2MID1 -> IMUX_B8 , 
+  pip INT_X15Y71 LOGIC_OUTS3 -> NE2BEG2 , 
+  pip INT_X15Y71 LOGIC_OUTS3 -> NR2BEG1 , 
+  pip INT_X15Y71 LOGIC_OUTS3 -> SL2BEG1 , 
+  pip INT_X15Y71 NR2BEG1 -> IMUX_B45 , 
+  pip INT_X16Y72 NE2END2 -> IMUX_B41 , 
+  ;
+net "coda2<1>" , 
+  outpin "coda2<3>" AQ ,
+  inpin "coda1<4>" A2 ,
+  inpin "coda2<3>" A1 ,
+  inpin "coda3<3>" B2 ,
+  pip CLBLM_X15Y70 SITE_IMUX_B16 -> M_B2 , 
+  pip CLBLM_X15Y71 SITE_IMUX_B4 -> L_A2 , 
+  pip CLBLM_X15Y72 L_AQ -> SITE_LOGIC_OUTS0 , 
+  pip CLBLM_X15Y72 SITE_IMUX_B5 -> L_A1 , 
+  pip INT_X15Y70 SL2MID2 -> IMUX_B16 , 
+  pip INT_X15Y71 BYP_BOUNCE_S0 -> IMUX_B4 , 
+  pip INT_X15Y72 BYP0 -> BYP_BOUNCE0 , 
+  pip INT_X15Y72 LOGIC_OUTS0 -> BYP0 , 
+  pip INT_X15Y72 LOGIC_OUTS0 -> NR2BEG_N2 , 
+  pip INT_X15Y72 LOGIC_OUTS0 -> SL2BEG_N2 , 
+  pip INT_X15Y72 NR2MID2 -> IMUX_B5 , 
+  ;
+net "coda2<2>" , 
+  outpin "coda2<3>" BQ ,
+  inpin "coda1<4>" B3 ,
+  inpin "coda2<3>" B4 ,
+  inpin "coda3<3>" C1 ,
+  pip CLBLM_X15Y70 SITE_IMUX_B30 -> M_C1 , 
+  pip CLBLM_X15Y71 SITE_IMUX_B39 -> L_B3 , 
+  pip CLBLM_X15Y72 L_BQ -> SITE_LOGIC_OUTS1 , 
+  pip CLBLM_X15Y72 SITE_IMUX_B37 -> L_B4 , 
+  pip INT_X14Y71 SW2MID1 -> EL2BEG1 , 
+  pip INT_X14Y72 WN2MID1 -> SW2BEG1 , 
+  pip INT_X15Y70 SR2END0 -> IMUX_B30 , 
+  pip INT_X15Y71 EL2MID1 -> IMUX_B39 , 
+  pip INT_X15Y72 LOGIC_OUTS1 -> IMUX_B37 , 
+  pip INT_X15Y72 LOGIC_OUTS1 -> SR2BEG0 , 
+  pip INT_X15Y72 LOGIC_OUTS1 -> WN2BEG1 , 
+  ;
+net "coda2<3>" , 
+  outpin "coda2<3>" CQ ,
+  inpin "coda1<4>" C5 ,
+  inpin "coda2<3>" C4 ,
+  inpin "coda3<3>" D5 ,
+  pip CLBLM_X15Y70 SITE_IMUX_B21 -> M_D5 , 
+  pip CLBLM_X15Y71 SITE_IMUX_B9 -> L_C5 , 
+  pip CLBLM_X15Y72 L_CQ -> SITE_LOGIC_OUTS2 , 
+  pip CLBLM_X15Y72 SITE_IMUX_B10 -> L_C4 , 
+  pip INT_X14Y70 SL2MID1 -> EL2BEG1 , 
+  pip INT_X14Y71 SW2END2 -> SL2BEG1 , 
+  pip INT_X15Y70 EL2MID1 -> IMUX_B21 , 
+  pip INT_X15Y71 FAN6 -> FAN_BOUNCE6 , 
+  pip INT_X15Y71 FAN_BOUNCE6 -> IMUX_B9 , 
+  pip INT_X15Y71 SW2MID2 -> FAN6 , 
+  pip INT_X15Y72 LOGIC_OUTS2 -> IMUX_B10 , 
+  pip INT_X15Y72 LOGIC_OUTS2 -> SW2BEG2 , 
+  ;
+net "coda2<4>" , 
+  outpin "coda2<4>" BQ ,
+  inpin "coda1<4>" D1 ,
+  inpin "coda2<4>" B2 ,
+  inpin "coda3<4>" A2 ,
+  pip CLBLL_X16Y72 L_BQ -> SITE_LOGIC_OUTS1 , 
+  pip CLBLL_X16Y72 SITE_IMUX_B40 -> L_B2 , 
+  pip CLBLM_X15Y71 SITE_IMUX_B42 -> L_D1 , 
+  pip CLBLM_X15Y72 SITE_IMUX_B28 -> M_A2 , 
+  pip INT_X15Y71 SL2MID0 -> IMUX_B42 , 
+  pip INT_X15Y72 CTRL_BOUNCE_S0 -> IMUX_B28 , 
+  pip INT_X15Y72 WN2MID1 -> SL2BEG0 , 
+  pip INT_X15Y73 CTRL0 -> CTRL_BOUNCE0 , 
+  pip INT_X15Y73 NW2END0 -> CTRL0 , 
+  pip INT_X16Y72 BYP_BOUNCE_S0 -> IMUX_B40 , 
+  pip INT_X16Y72 LOGIC_OUTS1 -> NW2BEG0 , 
+  pip INT_X16Y72 LOGIC_OUTS1 -> WN2BEG1 , 
+  pip INT_X16Y73 BYP0 -> BYP_BOUNCE0 , 
+  pip INT_X16Y73 NW2MID0 -> BYP0 , 
+  ;
+net "coda3<1>" , 
+  outpin "coda3<3>" BQ ,
+  inpin "coda2<3>" A3 ,
+  inpin "coda3<3>" B4 ,
+  pip CLBLM_X15Y70 M_BQ -> SITE_LOGIC_OUTS5 , 
+  pip CLBLM_X15Y70 SITE_IMUX_B13 -> M_B4 , 
+  pip CLBLM_X15Y72 SITE_IMUX_B3 -> L_A3 , 
+  pip INT_X15Y70 LOGIC_OUTS5 -> IMUX_B13 , 
+  pip INT_X15Y70 LOGIC_OUTS5 -> NL2BEG1 , 
+  pip INT_X15Y72 NL2END1 -> IMUX_B3 , 
+  ;
+net "coda3<2>" , 
+  outpin "coda3<3>" CQ ,
+  inpin "coda2<3>" B1 ,
+  inpin "coda3<3>" C4 ,
+  pip CLBLM_X15Y70 M_CQ -> SITE_LOGIC_OUTS6 , 
+  pip CLBLM_X15Y70 SITE_IMUX_B34 -> M_C4 , 
+  pip CLBLM_X15Y72 SITE_IMUX_B41 -> L_B1 , 
+  pip INT_X14Y71 WN2END2 -> NW2BEG1 , 
+  pip INT_X14Y72 NW2MID1 -> ER2BEG2 , 
+  pip INT_X15Y70 LOGIC_OUTS6 -> IMUX_B34 , 
+  pip INT_X15Y70 LOGIC_OUTS6 -> WN2BEG2 , 
+  pip INT_X15Y72 ER2MID2 -> IMUX_B41 , 
+  ;
+net "coda3<3>" , 
+  outpin "coda3<3>" DQ ,
+  inpin "coda2<3>" C2 ,
+  inpin "coda3<3>" D2 ,
+  pip CLBLM_X15Y70 M_DQ -> SITE_LOGIC_OUTS7 , 
+  pip CLBLM_X15Y70 SITE_IMUX_B19 -> M_D2 , 
+  pip CLBLM_X15Y72 SITE_IMUX_B7 -> L_C2 , 
+  pip INT_X15Y70 FAN4 -> FAN_BOUNCE4 , 
+  pip INT_X15Y70 FAN_BOUNCE4 -> IMUX_B19 , 
+  pip INT_X15Y70 LOGIC_OUTS7 -> NR2BEG1 , 
+  pip INT_X15Y70 NR2BEG1 -> FAN4 , 
+  pip INT_X15Y72 FAN4 -> FAN_BOUNCE4 , 
+  pip INT_X15Y72 FAN_BOUNCE4 -> IMUX_B7 , 
+  pip INT_X15Y72 NR2END1 -> FAN4 , 
+  ;
+net "coda3<4>" , 
+  outpin "coda3<4>" AQ ,
+  inpin "coda2<4>" B3 ,
+  inpin "coda3<4>" A4 ,
+  pip CLBLL_X16Y72 SITE_IMUX_B39 -> L_B3 , 
+  pip CLBLM_X15Y72 M_AQ -> SITE_LOGIC_OUTS4 , 
+  pip CLBLM_X15Y72 SITE_IMUX_B25 -> M_A4 , 
+  pip INT_X15Y72 LOGIC_OUTS4 -> ER2BEG1 , 
+  pip INT_X15Y72 LOGIC_OUTS4 -> IMUX_B25 , 
+  pip INT_X16Y72 ER2MID1 -> IMUX_B39 , 
+  ;
+net "fu1" , 
+  outpin "fu4" AQ ,
+  inpin "coda0<1>" B4 ,
+  inpin "coda0<1>" D4 ,
+  inpin "coda0<4>" A4 ,
+  inpin "coda0<4>" D5 ,
+  inpin "coda2<4>" A4 ,
+  inpin "coda3<4>" B4 ,
+  inpin "stato_FSM_FFd3" A6 ,
+  pip CLBLL_X16Y71 M_AQ -> SITE_LOGIC_OUTS4 , 
+  pip CLBLL_X16Y71 SITE_IMUX_B0 -> L_A6 , 
+  pip CLBLL_X16Y72 SITE_IMUX_B1 -> L_A4 , 
+  pip CLBLL_X16Y72 SITE_IMUX_B13 -> M_B4 , 
+  pip CLBLL_X16Y72 SITE_IMUX_B22 -> M_D4 , 
+  pip CLBLM_X15Y70 SITE_IMUX_B1 -> L_A4 , 
+  pip CLBLM_X15Y70 SITE_IMUX_B45 -> L_D5 , 
+  pip CLBLM_X15Y72 SITE_IMUX_B13 -> M_B4 , 
+  pip INT_X15Y70 BYP1 -> BYP_BOUNCE1 , 
+  pip INT_X15Y70 BYP_BOUNCE1 -> IMUX_B45 , 
+  pip INT_X15Y70 WS2MID1 -> BYP1 , 
+  pip INT_X15Y70 WS2MID1 -> IMUX_B1 , 
+  pip INT_X15Y72 WN2END1 -> IMUX_B13 , 
+  pip INT_X16Y70 SE2MID1 -> WS2BEG1 , 
+  pip INT_X16Y71 FAN2 -> FAN_BOUNCE2 , 
+  pip INT_X16Y71 FAN_BOUNCE2 -> IMUX_B0 , 
+  pip INT_X16Y71 LOGIC_OUTS4 -> NR2BEG0 , 
+  pip INT_X16Y71 LOGIC_OUTS4 -> SE2BEG1 , 
+  pip INT_X16Y71 LOGIC_OUTS4 -> SL2BEG0 , 
+  pip INT_X16Y71 LOGIC_OUTS4 -> WN2BEG1 , 
+  pip INT_X16Y71 SL2BEG0 -> FAN2 , 
+  pip INT_X16Y72 FAN3 -> FAN_BOUNCE3 , 
+  pip INT_X16Y72 FAN_BOUNCE3 -> IMUX_B22 , 
+  pip INT_X16Y72 NR2MID0 -> IMUX_B1 , 
+  pip INT_X16Y72 NR2MID0 -> IMUX_B13 , 
+  pip INT_X16Y72 NR2MID0 -> WL2BEG1 , 
+  pip INT_X16Y72 WL2BEG1 -> FAN3 , 
+  ;
+net "fu2" , 
+  outpin "fu4" BQ ,
+  inpin "N16" B4 ,
+  inpin "coda0<1>" D2 ,
+  inpin "coda0<4>" D1 ,
+  inpin "coda2<3>" D6 ,
+  inpin "coda3<4>" B6 ,
+  inpin "fu4" B4 ,
+  inpin "fu4" D2 ,
+  inpin "grant_o_3" A6 ,
+  inpin "grant_o_3" B6 ,
+  inpin "stato_FSM_FFd3" A4 ,
+  pip CLBLL_X16Y70 SITE_IMUX_B37 -> L_B4 , 
+  pip CLBLL_X16Y71 M_BQ -> SITE_LOGIC_OUTS5 , 
+  pip CLBLL_X16Y71 SITE_IMUX_B1 -> L_A4 , 
+  pip CLBLL_X16Y71 SITE_IMUX_B13 -> M_B4 , 
+  pip CLBLL_X16Y71 SITE_IMUX_B19 -> M_D2 , 
+  pip CLBLL_X16Y72 SITE_IMUX_B19 -> M_D2 , 
+  pip CLBLM_X15Y70 SITE_IMUX_B42 -> L_D1 , 
+  pip CLBLM_X15Y71 SITE_IMUX_B12 -> M_B6 , 
+  pip CLBLM_X15Y71 SITE_IMUX_B24 -> M_A6 , 
+  pip CLBLM_X15Y72 SITE_IMUX_B12 -> M_B6 , 
+  pip CLBLM_X15Y72 SITE_IMUX_B47 -> L_D6 , 
+  pip INT_X15Y70 SW2END0 -> IMUX_B42 , 
+  pip INT_X15Y71 FAN7 -> FAN_BOUNCE7 , 
+  pip INT_X15Y71 WN2END_S0 -> FAN7 , 
+  pip INT_X15Y71 WN2END_S0 -> NW2BEG2 , 
+  pip INT_X15Y71 WN2MID0 -> IMUX_B12 , 
+  pip INT_X15Y71 WN2MID0 -> IMUX_B24 , 
+  pip INT_X15Y72 FAN_BOUNCE_N7 -> IMUX_B12 , 
+  pip INT_X15Y72 NW2MID2 -> IMUX_B47 , 
+  pip INT_X16Y69 BYP7 -> BYP_BOUNCE7 , 
+  pip INT_X16Y69 SL2MID2 -> BYP7 , 
+  pip INT_X16Y70 BYP_BOUNCE_N7 -> IMUX_B37 , 
+  pip INT_X16Y71 LOGIC_OUTS5 -> IMUX_B1 , 
+  pip INT_X16Y71 LOGIC_OUTS5 -> IMUX_B13 , 
+  pip INT_X16Y71 LOGIC_OUTS5 -> IMUX_B19 , 
+  pip INT_X16Y71 LOGIC_OUTS5 -> NW2BEG0 , 
+  pip INT_X16Y71 LOGIC_OUTS5 -> SL2BEG_N2 , 
+  pip INT_X16Y71 LOGIC_OUTS5 -> SW2BEG0 , 
+  pip INT_X16Y71 LOGIC_OUTS5 -> WN2BEG0 , 
+  pip INT_X16Y72 NW2MID0 -> IMUX_B19 , 
+  ;
+net "fu3" , 
+  outpin "fu4" CQ ,
+  inpin "N16" A6 ,
+  inpin "N16" C3 ,
+  inpin "coda0<4>" D4 ,
+  inpin "coda2<3>" D5 ,
+  inpin "coda2<4>" D3 ,
+  inpin "fu4" C4 ,
+  inpin "fu4" D5 ,
+  inpin "stato_FSM_FFd3" A3 ,
+  pip CLBLL_X16Y70 SITE_IMUX_B0 -> L_A6 , 
+  pip CLBLL_X16Y70 SITE_IMUX_B8 -> L_C3 , 
+  pip CLBLL_X16Y71 M_CQ -> SITE_LOGIC_OUTS6 , 
+  pip CLBLL_X16Y71 SITE_IMUX_B21 -> M_D5 , 
+  pip CLBLL_X16Y71 SITE_IMUX_B3 -> L_A3 , 
+  pip CLBLL_X16Y71 SITE_IMUX_B34 -> M_C4 , 
+  pip CLBLL_X16Y72 SITE_IMUX_B44 -> L_D3 , 
+  pip CLBLM_X15Y70 SITE_IMUX_B46 -> L_D4 , 
+  pip CLBLM_X15Y72 SITE_IMUX_B45 -> L_D5 , 
+  pip INT_X15Y70 WS2END2 -> IMUX_B46 , 
+  pip INT_X15Y72 WN2END2 -> IMUX_B45 , 
+  pip INT_X16Y70 BYP2 -> BYP_BOUNCE2 , 
+  pip INT_X16Y70 BYP6 -> BYP_BOUNCE6 , 
+  pip INT_X16Y70 BYP_BOUNCE2 -> IMUX_B0 , 
+  pip INT_X16Y70 BYP_BOUNCE6 -> IMUX_B8 , 
+  pip INT_X16Y70 SR2MID2 -> BYP2 , 
+  pip INT_X16Y70 SR2MID2 -> BYP6 , 
+  pip INT_X16Y71 ER2BEG_S0 -> FAN6 , 
+  pip INT_X16Y71 FAN6 -> FAN_BOUNCE6 , 
+  pip INT_X16Y71 FAN_BOUNCE6 -> IMUX_B21 , 
+  pip INT_X16Y71 FAN_BOUNCE6 -> IMUX_B3 , 
+  pip INT_X16Y71 LOGIC_OUTS6 -> ER2BEG_S0 , 
+  pip INT_X16Y71 LOGIC_OUTS6 -> IMUX_B34 , 
+  pip INT_X16Y71 LOGIC_OUTS6 -> NW2BEG2 , 
+  pip INT_X16Y71 LOGIC_OUTS6 -> SR2BEG2 , 
+  pip INT_X16Y71 LOGIC_OUTS6 -> WN2BEG2 , 
+  pip INT_X16Y71 LOGIC_OUTS6 -> WS2BEG2 , 
+  pip INT_X16Y72 FAN6 -> FAN_BOUNCE6 , 
+  pip INT_X16Y72 FAN_BOUNCE6 -> IMUX_B44 , 
+  pip INT_X16Y72 NW2MID2 -> FAN6 , 
+  ;
+net "fu4" , 
+  outpin "fu4" DQ ,
+  inpin "N16" A4 ,
+  inpin "N16" C5 ,
+  inpin "coda0<4>" D3 ,
+  inpin "coda2<3>" D4 ,
+  inpin "coda2<4>" D5 ,
+  inpin "fu4" C2 ,
+  inpin "fu4" D4 ,
+  inpin "stato_FSM_FFd3" A5 ,
+  pip CLBLL_X16Y70 SITE_IMUX_B1 -> L_A4 , 
+  pip CLBLL_X16Y70 SITE_IMUX_B9 -> L_C5 , 
+  pip CLBLL_X16Y71 M_DQ -> SITE_LOGIC_OUTS7 , 
+  pip CLBLL_X16Y71 SITE_IMUX_B2 -> L_A5 , 
+  pip CLBLL_X16Y71 SITE_IMUX_B22 -> M_D4 , 
+  pip CLBLL_X16Y71 SITE_IMUX_B31 -> M_C2 , 
+  pip CLBLL_X16Y72 SITE_IMUX_B45 -> L_D5 , 
+  pip CLBLM_X15Y70 SITE_IMUX_B44 -> L_D3 , 
+  pip CLBLM_X15Y72 SITE_IMUX_B46 -> L_D4 , 
+  pip INT_X15Y70 WR2MID1 -> IMUX_B44 , 
+  pip INT_X15Y72 NW2END1 -> IMUX_B46 , 
+  pip INT_X16Y69 FAN7 -> FAN_BOUNCE7 , 
+  pip INT_X16Y69 SW2MID2 -> FAN7 , 
+  pip INT_X16Y70 BYP7 -> BYP_BOUNCE7 , 
+  pip INT_X16Y70 FAN6 -> FAN_BOUNCE6 , 
+  pip INT_X16Y70 FAN7 -> FAN_BOUNCE7 , 
+  pip INT_X16Y70 FAN_BOUNCE6 -> IMUX_B9 , 
+  pip INT_X16Y70 FAN_BOUNCE_N7 -> IMUX_B1 , 
+  pip INT_X16Y70 SE2MID2 -> BYP7 , 
+  pip INT_X16Y70 SE2MID2 -> SW2BEG2 , 
+  pip INT_X16Y70 SE2MID2 -> WR2BEG1 , 
+  pip INT_X16Y70 SW2MID2 -> FAN6 , 
+  pip INT_X16Y70 SW2MID2 -> FAN7 , 
+  pip INT_X16Y71 BYP_BOUNCE_N7 -> IMUX_B2 , 
+  pip INT_X16Y71 FAN_BOUNCE_N7 -> IMUX_B31 , 
+  pip INT_X16Y71 LOGIC_OUTS7 -> IMUX_B22 , 
+  pip INT_X16Y71 LOGIC_OUTS7 -> NW2BEG1 , 
+  pip INT_X16Y71 LOGIC_OUTS7 -> SE2BEG2 , 
+  pip INT_X16Y71 LOGIC_OUTS7 -> SW2BEG2 , 
+  pip INT_X16Y72 NW2MID1 -> IMUX_B45 , 
+  ;
+net "grant<0>" , 
+  outpin "grant<3>" AQ ,
+  inpin "grant_o_3" AX ,
+  pip CLBLL_X16Y69 M_AQ -> SITE_LOGIC_OUTS4 , 
+  pip CLBLM_X15Y71 SITE_BYP_B1 -> M_AX , 
+  pip INT_X15Y71 BYP1 -> BYP_B1 , 
+  pip INT_X15Y71 WN2END1 -> BYP1 , 
+  pip INT_X16Y69 LOGIC_OUTS4 -> NE2BEG0 , 
+  pip INT_X16Y70 NE2MID0 -> WN2BEG1 , 
+  ;
+net "grant<1>" , 
+  outpin "grant<3>" BQ ,
+  inpin "grant_o_3" BX ,
+  pip CLBLL_X16Y69 M_BQ -> SITE_LOGIC_OUTS5 , 
+  pip CLBLM_X15Y71 SITE_BYP_B4 -> M_BX , 
+  pip INT_X15Y70 NW2END0 -> NR2BEG0 , 
+  pip INT_X15Y71 BYP4 -> BYP_B4 , 
+  pip INT_X15Y71 NR2MID0 -> BYP4 , 
+  pip INT_X16Y69 LOGIC_OUTS5 -> NW2BEG0 , 
+  ;
+net "grant<2>" , 
+  outpin "grant<3>" CQ ,
+  inpin "grant_o_3" CX ,
+  pip CLBLL_X16Y69 M_CQ -> SITE_LOGIC_OUTS6 , 
+  pip CLBLM_X15Y71 SITE_BYP_B3 -> M_CX , 
+  pip INT_X15Y71 BYP3 -> BYP_B3 , 
+  pip INT_X15Y71 WL2MID2 -> BYP3 , 
+  pip INT_X16Y69 LOGIC_OUTS6 -> NR2BEG1 , 
+  pip INT_X16Y71 NR2END1 -> WL2BEG2 , 
+  ;
+net "grant<3>" , 
+  outpin "grant<3>" DQ ,
+  inpin "grant_o_3" DX ,
+  pip CLBLL_X16Y69 M_DQ -> SITE_LOGIC_OUTS7 , 
+  pip CLBLM_X15Y71 SITE_BYP_B6 -> M_DX , 
+  pip INT_X15Y71 BYP6 -> BYP_B6 , 
+  pip INT_X15Y71 NW2END1 -> BYP6 , 
+  pip INT_X16Y69 LOGIC_OUTS7 -> NE2BEG1 , 
+  pip INT_X16Y70 NE2MID1 -> NW2BEG1 , 
+  ;
+net "grant_not0001" , 
+  outpin "coda0<4>" D ,
+  inpin "coda0<1>" A6 ,
+  inpin "coda0<1>" C4 ,
+  inpin "coda0<4>" C2 ,
+  inpin "coda1<4>" A3 ,
+  inpin "coda1<4>" B1 ,
+  inpin "coda1<4>" C1 ,
+  inpin "coda1<4>" D4 ,
+  inpin "coda2<3>" A4 ,
+  inpin "coda2<3>" B3 ,
+  inpin "coda2<3>" C5 ,
+  inpin "coda2<4>" B4 ,
+  inpin "grant<3>" CE ,
+  pip CLBLL_X16Y69 SITE_CTRL_B1 -> M_CE , 
+  pip CLBLL_X16Y72 SITE_IMUX_B24 -> M_A6 , 
+  pip CLBLL_X16Y72 SITE_IMUX_B34 -> M_C4 , 
+  pip CLBLL_X16Y72 SITE_IMUX_B37 -> L_B4 , 
+  pip CLBLM_X15Y70 L_D -> L_DMUX ,  #  _ROUTETHROUGH:D:DMUX "coda0<4>" D -> DMUX
+  pip CLBLM_X15Y70 L_D -> SITE_LOGIC_OUTS11 , 
+  pip CLBLM_X15Y70 L_DMUX -> SITE_LOGIC_OUTS19 , 
+  pip CLBLM_X15Y70 SITE_IMUX_B7 -> L_C2 , 
+  pip CLBLM_X15Y71 SITE_IMUX_B3 -> L_A3 , 
+  pip CLBLM_X15Y71 SITE_IMUX_B41 -> L_B1 , 
+  pip CLBLM_X15Y71 SITE_IMUX_B46 -> L_D4 , 
+  pip CLBLM_X15Y71 SITE_IMUX_B6 -> L_C1 , 
+  pip CLBLM_X15Y72 SITE_IMUX_B1 -> L_A4 , 
+  pip CLBLM_X15Y72 SITE_IMUX_B39 -> L_B3 , 
+  pip CLBLM_X15Y72 SITE_IMUX_B9 -> L_C5 , 
+  pip INT_X15Y69 BYP7 -> BYP_BOUNCE7 , 
+  pip INT_X15Y69 SE2MID2 -> BYP7 , 
+  pip INT_X15Y70 BYP_BOUNCE_N7 -> IMUX_B7 , 
+  pip INT_X15Y70 LOGIC_OUTS11 -> NL2BEG_S0 , 
+  pip INT_X15Y70 LOGIC_OUTS11 -> NW2BEG2 , 
+  pip INT_X15Y70 LOGIC_OUTS11 -> SE2BEG2 , 
+  pip INT_X15Y70 LOGIC_OUTS11 -> WL2BEG_S0 , 
+  pip INT_X15Y70 LOGIC_OUTS19 -> ER2BEG2 , 
+  pip INT_X15Y70 LOGIC_OUTS19 -> ES2BEG1 , 
+  pip INT_X15Y70 LOGIC_OUTS19 -> NE2BEG1 , 
+  pip INT_X15Y71 FAN1 -> FAN_BOUNCE1 , 
+  pip INT_X15Y71 FAN_BOUNCE1 -> IMUX_B3 , 
+  pip INT_X15Y71 NE2MID1 -> IMUX_B46 , 
+  pip INT_X15Y71 NW2MID2 -> IMUX_B41 , 
+  pip INT_X15Y71 WL2BEG0 -> FAN1 , 
+  pip INT_X15Y71 WL2BEG0 -> IMUX_B6 , 
+  pip INT_X15Y72 BYP1 -> BYP_BOUNCE1 , 
+  pip INT_X15Y72 BYP_BOUNCE1 -> IMUX_B39 , 
+  pip INT_X15Y72 BYP_BOUNCE1 -> IMUX_B9 , 
+  pip INT_X15Y72 NL2MID0 -> BYP1 , 
+  pip INT_X15Y72 NL2MID0 -> IMUX_B1 , 
+  pip INT_X16Y69 CTRL1 -> CTRL_B1 , 
+  pip INT_X16Y69 ES2END1 -> CTRL1 , 
+  pip INT_X16Y70 ER2MID2 -> NL2BEG_S0 , 
+  pip INT_X16Y71 NE2END1 -> NE2BEG1 , 
+  pip INT_X16Y72 BYP4 -> BYP_BOUNCE4 , 
+  pip INT_X16Y72 BYP_BOUNCE4 -> IMUX_B24 , 
+  pip INT_X16Y72 NE2MID1 -> IMUX_B34 , 
+  pip INT_X16Y72 NL2MID0 -> BYP4 , 
+  pip INT_X16Y72 NL2MID0 -> IMUX_B37 , 
+  ;
+net "grant_o<0>" , cfg " _BELSIG:PAD,PAD,grant_o<0>:grant_o<0>",
+  ;
+net "grant_o<1>" , cfg " _BELSIG:PAD,PAD,grant_o<1>:grant_o<1>",
+  ;
+net "grant_o<2>" , cfg " _BELSIG:PAD,PAD,grant_o<2>:grant_o<2>",
+  ;
+net "grant_o<3>" , cfg " _BELSIG:PAD,PAD,grant_o<3>:grant_o<3>",
+  ;
+net "grant_o_0" , 
+  outpin "grant_o_3" AQ ,
+  inpin "grant_o<0>" O ,
+  pip CLBLM_X15Y71 M_AQ -> SITE_LOGIC_OUTS4 , 
+  pip INT_X15Y71 LOGIC_OUTS4 -> NE5BEG0 , 
+  pip INT_X17Y74 NE5END0 -> NL2BEG1 , 
+  pip INT_X17Y75 FAN5 -> FAN_BOUNCE5 , 
+  pip INT_X17Y75 FAN_BOUNCE5 -> IMUX_B47 , 
+  pip INT_X17Y75 NL2MID1 -> FAN5 , 
+  pip IOI_X17Y75 IOI_IMUX_B47 -> IOI_O10 , 
+  pip IOI_X17Y75 IOI_O10 -> IOI_O_PINWIRE0 ,  #  _ROUTETHROUGH:D1:OQ "XDL_DUMMY_IOI_X17Y75_OLOGIC_X1Y151" D1 -> OQ
+  pip IOI_X17Y75 IOI_O_PINWIRE0 -> IOI_O0 , 
+  ;
+net "grant_o_1" , 
+  outpin "grant_o_3" BQ ,
+  inpin "grant_o<1>" O ,
+  pip CLBLM_X15Y71 M_BQ -> SITE_LOGIC_OUTS5 , 
+  pip INT_X15Y71 LOGIC_OUTS5 -> ER2BEG1 , 
+  pip INT_X17Y71 ER2END1 -> NL2BEG2 , 
+  pip INT_X17Y73 NL2END2 -> IMUX_B41 , 
+  pip IOI_X17Y73 IOI_IMUX_B41 -> IOI_O11 , 
+  pip IOI_X17Y73 IOI_O11 -> IOI_O_PINWIRE1 ,  #  _ROUTETHROUGH:D1:OQ "XDL_DUMMY_IOI_X17Y73_OLOGIC_X1Y146" D1 -> OQ
+  pip IOI_X17Y73 IOI_O_PINWIRE1 -> IOI_O1 , 
+  ;
+net "grant_o_2" , 
+  outpin "grant_o_3" CQ ,
+  inpin "grant_o<2>" O ,
+  pip CLBLM_X15Y71 M_CQ -> SITE_LOGIC_OUTS6 , 
+  pip INT_X15Y71 LOGIC_OUTS6 -> ER2BEG_S0 , 
+  pip INT_X17Y72 BYP5 -> BYP_BOUNCE5 , 
+  pip INT_X17Y72 BYP_BOUNCE5 -> IMUX_B47 , 
+  pip INT_X17Y72 ER2END0 -> BYP5 , 
+  pip IOI_X17Y72 IOI_IMUX_B47 -> IOI_O10 , 
+  pip IOI_X17Y72 IOI_O10 -> IOI_O_PINWIRE0 ,  #  _ROUTETHROUGH:D1:OQ "XDL_DUMMY_IOI_X17Y72_OLOGIC_X1Y145" D1 -> OQ
+  pip IOI_X17Y72 IOI_O_PINWIRE0 -> IOI_O0 , 
+  ;
+net "grant_o_3" , 
+  outpin "grant_o_3" DQ ,
+  inpin "grant_o<3>" O ,
+  pip CLBLM_X15Y71 M_DQ -> SITE_LOGIC_OUTS7 , 
+  pip INT_X15Y71 LOGIC_OUTS7 -> EN2BEG1 , 
+  pip INT_X16Y72 EN2END1 -> EN2BEG1 , 
+  pip INT_X17Y73 EN2END1 -> FAN5 , 
+  pip INT_X17Y73 FAN5 -> FAN_BOUNCE5 , 
+  pip INT_X17Y73 FAN_BOUNCE5 -> IMUX_B47 , 
+  pip IOI_X17Y73 IOI_IMUX_B47 -> IOI_O10 , 
+  pip IOI_X17Y73 IOI_O10 -> IOI_O_PINWIRE0 ,  #  _ROUTETHROUGH:D1:OQ "XDL_DUMMY_IOI_X17Y73_OLOGIC_X1Y147" D1 -> OQ
+  pip IOI_X17Y73 IOI_O_PINWIRE0 -> IOI_O0 , 
+  ;
+net "request1" , cfg " _BELSIG:PAD,PAD,request1:request1",
+  ;
+net "request1_IBUF" , 
+  outpin "request1" I ,
+  inpin "ru4" A1 ,
+  pip CLBLL_X16Y73 SITE_IMUX_B5 -> L_A1 , 
+  pip INT_INTERFACE_X17Y75 INT_INTERFACE_LOGIC_OUTS_B21 -> INT_INTERFACE_LOGIC_OUTS21 , 
+  pip INT_X16Y73 SW2MID2 -> IMUX_B5 , 
+  pip INT_X16Y74 WS2END2 -> SW2BEG2 , 
+  pip INT_X17Y75 LOGIC_OUTS21 -> WS2BEG2 , 
+  pip IOI_X17Y75 IOI_D1 -> IOI_I1 ,  #  _ROUTETHROUGH:D:O "XDL_DUMMY_IOI_X17Y75_ILOGIC_X1Y150" D -> O
+  pip IOI_X17Y75 IOI_I1 -> IOI_LOGIC_OUTS21 , 
+  pip IOI_X17Y75 IOI_IBUF1 -> IOI_D1 , 
+  ;
+net "request2" , cfg " _BELSIG:PAD,PAD,request2:request2",
+  ;
+net "request2_IBUF" , 
+  outpin "request2" I ,
+  inpin "ru4" B2 ,
+  pip CLBLL_X16Y73 SITE_IMUX_B40 -> L_B2 , 
+  pip INT_INTERFACE_X17Y74 INT_INTERFACE_LOGIC_OUTS_B21 -> INT_INTERFACE_LOGIC_OUTS21 , 
+  pip INT_X16Y73 WS2END2 -> IMUX_B40 , 
+  pip INT_X17Y74 LOGIC_OUTS21 -> WS2BEG2 , 
+  pip IOI_X17Y74 IOI_D1 -> IOI_I1 ,  #  _ROUTETHROUGH:D:O "XDL_DUMMY_IOI_X17Y74_ILOGIC_X1Y148" D -> O
+  pip IOI_X17Y74 IOI_I1 -> IOI_LOGIC_OUTS21 , 
+  pip IOI_X17Y74 IOI_IBUF1 -> IOI_D1 , 
+  ;
+net "request3" , cfg " _BELSIG:PAD,PAD,request3:request3",
+  ;
+net "request3_IBUF" , 
+  outpin "request3" I ,
+  inpin "ru4" C1 ,
+  pip CLBLL_X16Y73 SITE_IMUX_B6 -> L_C1 , 
+  pip INT_INTERFACE_X17Y72 INT_INTERFACE_LOGIC_OUTS_B21 -> INT_INTERFACE_LOGIC_OUTS21 , 
+  pip INT_X16Y73 WL2MID0 -> IMUX_B6 , 
+  pip INT_X17Y72 LOGIC_OUTS21 -> WL2BEG_S0 , 
+  pip IOI_X17Y72 IOI_D1 -> IOI_I1 ,  #  _ROUTETHROUGH:D:O "XDL_DUMMY_IOI_X17Y72_ILOGIC_X1Y144" D -> O
+  pip IOI_X17Y72 IOI_I1 -> IOI_LOGIC_OUTS21 , 
+  pip IOI_X17Y72 IOI_IBUF1 -> IOI_D1 , 
+  ;
+net "request4" , cfg " _BELSIG:PAD,PAD,request4:request4",
+  ;
+net "request4_IBUF" , 
+  outpin "request4" I ,
+  inpin "ru4" D2 ,
+  pip CLBLL_X16Y73 SITE_IMUX_B43 -> L_D2 , 
+  pip INT_INTERFACE_X17Y74 INT_INTERFACE_LOGIC_OUTS_B11 -> INT_INTERFACE_LOGIC_OUTS11 , 
+  pip INT_X16Y73 FAN4 -> FAN_BOUNCE4 , 
+  pip INT_X16Y73 FAN_BOUNCE4 -> IMUX_B43 , 
+  pip INT_X16Y73 WS2MID2 -> FAN4 , 
+  pip INT_X17Y73 SE2MID2 -> WS2BEG2 , 
+  pip INT_X17Y74 LOGIC_OUTS11 -> SE2BEG2 , 
+  pip IOI_X17Y74 IOI_D0 -> IOI_I0 ,  #  _ROUTETHROUGH:D:O "XDL_DUMMY_IOI_X17Y74_ILOGIC_X1Y149" D -> O
+  pip IOI_X17Y74 IOI_I0 -> IOI_LOGIC_OUTS11 , 
+  pip IOI_X17Y74 IOI_IBUF0 -> IOI_D0 , 
+  ;
+net "reset" , cfg " _BELSIG:PAD,PAD,reset:reset",
+  ;
+net "reset_IBUF" , 
+  outpin "reset" I ,
+  inpin "coda0<1>" SR ,
+  inpin "coda0<4>" SR ,
+  inpin "coda1<4>" SR ,
+  inpin "coda2<3>" SR ,
+  inpin "coda2<4>" SR ,
+  inpin "coda3<3>" SR ,
+  inpin "coda3<4>" SR ,
+  inpin "fu4" SR ,
+  inpin "grant<3>" SR ,
+  inpin "grant_o_3" SR ,
+  inpin "ru4" SR ,
+  inpin "stato_FSM_FFd3" SR ,
+  pip CLBLL_X16Y69 SITE_CTRL_B3 -> M_SR , 
+  pip CLBLL_X16Y71 SITE_CTRL_B2 -> L_SR , 
+  pip CLBLL_X16Y71 SITE_CTRL_B3 -> M_SR , 
+  pip CLBLL_X16Y72 SITE_CTRL_B2 -> L_SR , 
+  pip CLBLL_X16Y72 SITE_CTRL_B3 -> M_SR , 
+  pip CLBLL_X16Y73 SITE_CTRL_B2 -> L_SR , 
+  pip CLBLM_X15Y70 SITE_CTRL_B2 -> L_SR , 
+  pip CLBLM_X15Y70 SITE_CTRL_B3 -> M_SR , 
+  pip CLBLM_X15Y71 SITE_CTRL_B2 -> L_SR , 
+  pip CLBLM_X15Y71 SITE_CTRL_B3 -> M_SR , 
+  pip CLBLM_X15Y72 SITE_CTRL_B2 -> L_SR , 
+  pip CLBLM_X15Y72 SITE_CTRL_B3 -> M_SR , 
+  pip INT_INTERFACE_X17Y70 INT_INTERFACE_LOGIC_OUTS_B11 -> INT_INTERFACE_LOGIC_OUTS11 , 
+  pip INT_X15Y70 CTRL2 -> CTRL_B2 , 
+  pip INT_X15Y70 CTRL3 -> CTRL_B3 , 
+  pip INT_X15Y70 WS2MID2 -> CTRL2 , 
+  pip INT_X15Y70 WS2MID2 -> CTRL3 , 
+  pip INT_X15Y70 WS2MID2 -> NW2BEG1 , 
+  pip INT_X15Y71 CTRL2 -> CTRL_B2 , 
+  pip INT_X15Y71 CTRL3 -> CTRL_B3 , 
+  pip INT_X15Y71 NW2MID1 -> CTRL2 , 
+  pip INT_X15Y71 NW2MID1 -> CTRL3 , 
+  pip INT_X15Y72 CTRL2 -> CTRL_B2 , 
+  pip INT_X15Y72 CTRL3 -> CTRL_B3 , 
+  pip INT_X15Y72 NR2BEG1 -> CTRL2 , 
+  pip INT_X15Y72 NR2BEG1 -> CTRL3 , 
+  pip INT_X15Y72 WL2MID2 -> NR2BEG1 , 
+  pip INT_X16Y69 CTRL3 -> CTRL_B3 , 
+  pip INT_X16Y69 WS2MID2 -> CTRL3 , 
+  pip INT_X16Y70 WN2MID2 -> WS2BEG2 , 
+  pip INT_X16Y71 CTRL2 -> CTRL_B2 , 
+  pip INT_X16Y71 CTRL3 -> CTRL_B3 , 
+  pip INT_X16Y71 WN2END2 -> CTRL2 , 
+  pip INT_X16Y71 WN2END2 -> CTRL3 , 
+  pip INT_X16Y71 WN2END2 -> NR2BEG1 , 
+  pip INT_X16Y72 CTRL2 -> CTRL_B2 , 
+  pip INT_X16Y72 CTRL3 -> CTRL_B3 , 
+  pip INT_X16Y72 NR2MID1 -> CTRL2 , 
+  pip INT_X16Y72 NR2MID1 -> CTRL3 , 
+  pip INT_X16Y72 NR2MID1 -> WL2BEG2 , 
+  pip INT_X16Y73 CTRL2 -> CTRL_B2 , 
+  pip INT_X16Y73 NR2END1 -> CTRL2 , 
+  pip INT_X17Y69 SE2MID2 -> WS2BEG2 , 
+  pip INT_X17Y70 LOGIC_OUTS11 -> SE2BEG2 , 
+  pip INT_X17Y70 LOGIC_OUTS11 -> WN2BEG2 , 
+  pip IOI_X17Y70 IOI_D0 -> IOI_I0 ,  #  _ROUTETHROUGH:D:O "XDL_DUMMY_IOI_X17Y70_ILOGIC_X1Y141" D -> O
+  pip IOI_X17Y70 IOI_I0 -> IOI_LOGIC_OUTS11 , 
+  pip IOI_X17Y70 IOI_IBUF0 -> IOI_D0 , 
+  ;
+net "ru1" , 
+  outpin "ru4" AQ ,
+  inpin "N16" B6 ,
+  inpin "coda0<1>" B6 ,
+  inpin "coda0<1>" D1 ,
+  inpin "coda0<4>" A6 ,
+  inpin "coda2<4>" A1 ,
+  inpin "coda2<4>" C4 ,
+  inpin "coda3<4>" B1 ,
+  inpin "fu4" AX ,
+  inpin "fu4" B6 ,
+  inpin "grant_o_3" A4 ,
+  inpin "grant_o_3" B5 ,
+  inpin "ru4" A4 ,
+  pip CLBLL_X16Y70 SITE_IMUX_B36 -> L_B6 , 
+  pip CLBLL_X16Y71 SITE_BYP_B1 -> M_AX , 
+  pip CLBLL_X16Y71 SITE_IMUX_B12 -> M_B6 , 
+  pip CLBLL_X16Y72 SITE_IMUX_B10 -> L_C4 , 
+  pip CLBLL_X16Y72 SITE_IMUX_B12 -> M_B6 , 
+  pip CLBLL_X16Y72 SITE_IMUX_B18 -> M_D1 , 
+  pip CLBLL_X16Y72 SITE_IMUX_B5 -> L_A1 , 
+  pip CLBLL_X16Y73 L_AQ -> SITE_LOGIC_OUTS0 , 
+  pip CLBLL_X16Y73 SITE_IMUX_B1 -> L_A4 , 
+  pip CLBLM_X15Y70 SITE_IMUX_B0 -> L_A6 , 
+  pip CLBLM_X15Y71 SITE_IMUX_B14 -> M_B5 , 
+  pip CLBLM_X15Y71 SITE_IMUX_B25 -> M_A4 , 
+  pip CLBLM_X15Y72 SITE_IMUX_B17 -> M_B1 , 
+  pip INT_X15Y69 WS2MID2 -> NR2BEG1 , 
+  pip INT_X15Y70 SR2MID0 -> IMUX_B0 , 
+  pip INT_X15Y71 FAN4 -> FAN_BOUNCE4 , 
+  pip INT_X15Y71 FAN_BOUNCE4 -> IMUX_B14 , 
+  pip INT_X15Y71 NR2END1 -> FAN4 , 
+  pip INT_X15Y71 SW2MID0 -> EL2BEG0 , 
+  pip INT_X15Y71 SW2MID0 -> IMUX_B25 , 
+  pip INT_X15Y71 SW2MID0 -> SR2BEG0 , 
+  pip INT_X15Y72 WS2END0 -> SW2BEG0 , 
+  pip INT_X15Y72 WS2MID_S0 -> IMUX_B17 , 
+  pip INT_X15Y73 WS2MID0 -> WS2MID_FAKE0 , 
+  pip INT_X16Y69 SE2MID2 -> WS2BEG2 , 
+  pip INT_X16Y70 SE2MID0 -> IMUX_B36 , 
+  pip INT_X16Y70 SL2END2 -> SE2BEG2 , 
+  pip INT_X16Y71 BYP1 -> BYP_B1 , 
+  pip INT_X16Y71 EL2MID0 -> BYP1 , 
+  pip INT_X16Y71 SR2END0 -> IMUX_B12 , 
+  pip INT_X16Y71 SR2END0 -> SE2BEG0 , 
+  pip INT_X16Y72 CTRL_BOUNCE_S0 -> IMUX_B10 , 
+  pip INT_X16Y72 NR2BEG2 -> IMUX_B5 , 
+  pip INT_X16Y72 SR2MID0 -> IMUX_B12 , 
+  pip INT_X16Y72 SR2MID0 -> IMUX_B18 , 
+  pip INT_X16Y73 CTRL0 -> CTRL_BOUNCE0 , 
+  pip INT_X16Y73 FAN1 -> FAN_BOUNCE1 , 
+  pip INT_X16Y73 FAN_BOUNCE1 -> CTRL0 , 
+  pip INT_X16Y73 LOGIC_OUTS0 -> IMUX_B1 , 
+  pip INT_X16Y73 LOGIC_OUTS0 -> NR2BEG_N2 , 
+  pip INT_X16Y73 LOGIC_OUTS0 -> SL2BEG_N2 , 
+  pip INT_X16Y73 LOGIC_OUTS0 -> SR2BEG0 , 
+  pip INT_X16Y73 LOGIC_OUTS0 -> WS2BEG0 , 
+  pip INT_X16Y73 SL2BEG_N2 -> FAN1 , 
+  ;
+net "ru2" , 
+  outpin "ru4" BQ ,
+  inpin "N16" A3 ,
+  inpin "N16" B1 ,
+  inpin "coda0<1>" D5 ,
+  inpin "coda2<4>" C1 ,
+  inpin "coda3<4>" B3 ,
+  inpin "fu4" B1 ,
+  inpin "fu4" BX ,
+  inpin "fu4" D1 ,
+  inpin "grant_o_3" A5 ,
+  inpin "grant_o_3" B3 ,
+  inpin "ru4" B4 ,
+  pip CLBLL_X16Y70 SITE_IMUX_B3 -> L_A3 , 
+  pip CLBLL_X16Y70 SITE_IMUX_B41 -> L_B1 , 
+  pip CLBLL_X16Y71 SITE_BYP_B4 -> M_BX , 
+  pip CLBLL_X16Y71 SITE_IMUX_B17 -> M_B1 , 
+  pip CLBLL_X16Y71 SITE_IMUX_B18 -> M_D1 , 
+  pip CLBLL_X16Y72 SITE_IMUX_B21 -> M_D5 , 
+  pip CLBLL_X16Y72 SITE_IMUX_B6 -> L_C1 , 
+  pip CLBLL_X16Y73 L_BQ -> SITE_LOGIC_OUTS1 , 
+  pip CLBLL_X16Y73 SITE_IMUX_B37 -> L_B4 , 
+  pip CLBLM_X15Y71 SITE_IMUX_B15 -> M_B3 , 
+  pip CLBLM_X15Y71 SITE_IMUX_B26 -> M_A5 , 
+  pip CLBLM_X15Y72 SITE_IMUX_B15 -> M_B3 , 
+  pip INT_X15Y71 SR2BEG1 -> IMUX_B26 , 
+  pip INT_X15Y71 SW2MID1 -> IMUX_B15 , 
+  pip INT_X15Y71 SW2MID1 -> SE2BEG1 , 
+  pip INT_X15Y71 SW2MID1 -> SR2BEG1 , 
+  pip INT_X15Y72 BYP_BOUNCE_S0 -> IMUX_B15 , 
+  pip INT_X15Y72 WS2END1 -> SW2BEG1 , 
+  pip INT_X15Y73 BYP0 -> BYP_BOUNCE0 , 
+  pip INT_X15Y73 WS2MID1 -> BYP0 , 
+  pip INT_X16Y70 FAN_BOUNCE_S0 -> IMUX_B41 , 
+  pip INT_X16Y70 SE2END1 -> IMUX_B3 , 
+  pip INT_X16Y71 BYP4 -> BYP_B4 , 
+  pip INT_X16Y71 EL2BEG0 -> BYP4 , 
+  pip INT_X16Y71 FAN0 -> FAN_BOUNCE0 , 
+  pip INT_X16Y71 FAN_BOUNCE_S0 -> IMUX_B17 , 
+  pip INT_X16Y71 SL2END0 -> EL2BEG0 , 
+  pip INT_X16Y71 SL2END0 -> FAN0 , 
+  pip INT_X16Y71 SL2END0 -> IMUX_B18 , 
+  pip INT_X16Y72 FAN0 -> FAN_BOUNCE0 , 
+  pip INT_X16Y72 SL2MID0 -> FAN0 , 
+  pip INT_X16Y72 SW2MID1 -> IMUX_B21 , 
+  pip INT_X16Y72 WR2MID0 -> IMUX_B6 , 
+  pip INT_X16Y73 LOGIC_OUTS1 -> EL2BEG1 , 
+  pip INT_X16Y73 LOGIC_OUTS1 -> IMUX_B37 , 
+  pip INT_X16Y73 LOGIC_OUTS1 -> SL2BEG0 , 
+  pip INT_X16Y73 LOGIC_OUTS1 -> SW2BEG1 , 
+  pip INT_X16Y73 LOGIC_OUTS1 -> WS2BEG1 , 
+  pip INT_X17Y72 SR2MID1 -> WR2BEG0 , 
+  pip INT_X17Y73 EL2MID1 -> SR2BEG1 , 
+  ;
+net "ru3" , 
+  outpin "ru4" CQ ,
+  inpin "N16" A5 ,
+  inpin "N16" C6 ,
+  inpin "coda2<4>" D4 ,
+  inpin "fu4" C6 ,
+  inpin "fu4" CX ,
+  inpin "fu4" D6 ,
+  inpin "ru4" C4 ,
+  pip CLBLL_X16Y70 SITE_IMUX_B11 -> L_C6 , 
+  pip CLBLL_X16Y70 SITE_IMUX_B2 -> L_A5 , 
+  pip CLBLL_X16Y71 SITE_BYP_B3 -> M_CX , 
+  pip CLBLL_X16Y71 SITE_IMUX_B23 -> M_D6 , 
+  pip CLBLL_X16Y71 SITE_IMUX_B35 -> M_C6 , 
+  pip CLBLL_X16Y72 SITE_IMUX_B46 -> L_D4 , 
+  pip CLBLL_X16Y73 L_CQ -> SITE_LOGIC_OUTS2 , 
+  pip CLBLL_X16Y73 SITE_IMUX_B10 -> L_C4 , 
+  pip INT_X15Y72 SW2MID2 -> ES2BEG2 , 
+  pip INT_X15Y72 SW2MID2 -> SE2BEG2 , 
+  pip INT_X15Y73 WN2MID2 -> SW2BEG2 , 
+  pip INT_X16Y70 EL2BEG2 -> IMUX_B11 , 
+  pip INT_X16Y70 SW5MID2 -> EL2BEG2 , 
+  pip INT_X16Y70 WR2MID1 -> IMUX_B2 , 
+  pip INT_X16Y71 BYP3 -> BYP_B3 , 
+  pip INT_X16Y71 ES2END2 -> BYP3 , 
+  pip INT_X16Y71 SE2END2 -> IMUX_B23 , 
+  pip INT_X16Y71 SE2END2 -> IMUX_B35 , 
+  pip INT_X16Y72 SE2MID2 -> IMUX_B46 , 
+  pip INT_X16Y73 LOGIC_OUTS2 -> IMUX_B10 , 
+  pip INT_X16Y73 LOGIC_OUTS2 -> SE2BEG2 , 
+  pip INT_X16Y73 LOGIC_OUTS2 -> SW5BEG2 , 
+  pip INT_X16Y73 LOGIC_OUTS2 -> WN2BEG2 , 
+  pip INT_X17Y70 SR2END2 -> WR2BEG1 , 
+  pip INT_X17Y72 SE2END2 -> SR2BEG2 , 
+  ;
+net "ru4" , 
+  outpin "ru4" DQ ,
+  inpin "N16" A2 ,
+  inpin "N16" C4 ,
+  inpin "coda2<4>" D6 ,
+  inpin "fu4" C3 ,
+  inpin "fu4" D3 ,
+  inpin "fu4" DX ,
+  inpin "ru4" D4 ,
+  pip CLBLL_X16Y70 SITE_IMUX_B10 -> L_C4 , 
+  pip CLBLL_X16Y70 SITE_IMUX_B4 -> L_A2 , 
+  pip CLBLL_X16Y71 SITE_BYP_B6 -> M_DX , 
+  pip CLBLL_X16Y71 SITE_IMUX_B20 -> M_D3 , 
+  pip CLBLL_X16Y71 SITE_IMUX_B32 -> M_C3 , 
+  pip CLBLL_X16Y72 SITE_IMUX_B47 -> L_D6 , 
+  pip CLBLL_X16Y73 L_DQ -> SITE_LOGIC_OUTS3 , 
+  pip CLBLL_X16Y73 SITE_IMUX_B46 -> L_D4 , 
+  pip INT_X16Y70 SW2END2 -> IMUX_B10 , 
+  pip INT_X16Y70 SW2END2 -> IMUX_B4 , 
+  pip INT_X16Y71 BYP6 -> BYP_B6 , 
+  pip INT_X16Y71 SL2END1 -> IMUX_B20 , 
+  pip INT_X16Y71 SL2END1 -> IMUX_B32 , 
+  pip INT_X16Y71 SR2END2 -> BYP6 , 
+  pip INT_X16Y72 SW2MID2 -> IMUX_B47 , 
+  pip INT_X16Y73 LOGIC_OUTS3 -> EL2BEG2 , 
+  pip INT_X16Y73 LOGIC_OUTS3 -> IMUX_B46 , 
+  pip INT_X16Y73 LOGIC_OUTS3 -> SL2BEG1 , 
+  pip INT_X16Y73 LOGIC_OUTS3 -> SR2BEG2 , 
+  pip INT_X16Y73 LOGIC_OUTS3 -> SW2BEG2 , 
+  pip INT_X17Y71 SR2END2 -> SW2BEG2 , 
+  pip INT_X17Y73 EL2MID2 -> SR2BEG2 , 
+  ;
+net "stato_FSM_FFd1" , 
+  outpin "stato_FSM_FFd3" BQ ,
+  inpin "N16" B3 ,
+  inpin "coda0<1>" B3 ,
+  inpin "coda0<1>" D3 ,
+  inpin "coda0<4>" A3 ,
+  inpin "coda0<4>" B2 ,
+  inpin "coda2<4>" A3 ,
+  inpin "coda2<4>" C5 ,
+  inpin "coda3<3>" B3 ,
+  inpin "coda3<3>" C3 ,
+  inpin "coda3<3>" D3 ,
+  inpin "coda3<4>" A3 ,
+  inpin "fu4" B3 ,
+  inpin "fu4" CE ,
+  inpin "grant_o_3" B4 ,
+  inpin "grant_o_3" CE ,
+  inpin "ru4" A5 ,
+  inpin "ru4" B5 ,
+  inpin "ru4" C2 ,
+  inpin "ru4" D3 ,
+  inpin "stato_FSM_FFd3" B6 ,
+  inpin "stato_FSM_FFd3" DX ,
+  pip CLBLL_X16Y70 SITE_IMUX_B39 -> L_B3 , 
+  pip CLBLL_X16Y71 L_BQ -> SITE_LOGIC_OUTS1 , 
+  pip CLBLL_X16Y71 SITE_BYP_B7 -> L_DX , 
+  pip CLBLL_X16Y71 SITE_CTRL_B1 -> M_CE , 
+  pip CLBLL_X16Y71 SITE_IMUX_B15 -> M_B3 , 
+  pip CLBLL_X16Y71 SITE_IMUX_B36 -> L_B6 , 
+  pip CLBLL_X16Y72 SITE_IMUX_B15 -> M_B3 , 
+  pip CLBLL_X16Y72 SITE_IMUX_B20 -> M_D3 , 
+  pip CLBLL_X16Y72 SITE_IMUX_B3 -> L_A3 , 
+  pip CLBLL_X16Y72 SITE_IMUX_B9 -> L_C5 , 
+  pip CLBLL_X16Y73 SITE_IMUX_B2 -> L_A5 , 
+  pip CLBLL_X16Y73 SITE_IMUX_B38 -> L_B5 , 
+  pip CLBLL_X16Y73 SITE_IMUX_B44 -> L_D3 , 
+  pip CLBLL_X16Y73 SITE_IMUX_B7 -> L_C2 , 
+  pip CLBLM_X15Y70 SITE_IMUX_B15 -> M_B3 , 
+  pip CLBLM_X15Y70 SITE_IMUX_B20 -> M_D3 , 
+  pip CLBLM_X15Y70 SITE_IMUX_B3 -> L_A3 , 
+  pip CLBLM_X15Y70 SITE_IMUX_B32 -> M_C3 , 
+  pip CLBLM_X15Y70 SITE_IMUX_B40 -> L_B2 , 
+  pip CLBLM_X15Y71 SITE_CTRL_B1 -> M_CE , 
+  pip CLBLM_X15Y71 SITE_IMUX_B13 -> M_B4 , 
+  pip CLBLM_X15Y72 SITE_IMUX_B27 -> M_A3 , 
+  pip INT_X14Y71 WL2END1 -> NR2BEG0 , 
+  pip INT_X14Y72 NR2MID0 -> ER2BEG1 , 
+  pip INT_X15Y70 BYP_BOUNCE_S0 -> IMUX_B15 , 
+  pip INT_X15Y70 BYP_BOUNCE_S0 -> IMUX_B3 , 
+  pip INT_X15Y70 BYP_BOUNCE_S0 -> IMUX_B40 , 
+  pip INT_X15Y70 WS2END1 -> IMUX_B20 , 
+  pip INT_X15Y70 WS2END1 -> IMUX_B32 , 
+  pip INT_X15Y71 BYP0 -> BYP_BOUNCE0 , 
+  pip INT_X15Y71 CTRL1 -> CTRL_B1 , 
+  pip INT_X15Y71 WL2MID1 -> CTRL1 , 
+  pip INT_X15Y71 WS2MID1 -> BYP0 , 
+  pip INT_X15Y71 WS2MID1 -> IMUX_B13 , 
+  pip INT_X15Y72 ER2MID1 -> IMUX_B27 , 
+  pip INT_X16Y70 SW2MID1 -> IMUX_B39 , 
+  pip INT_X16Y71 BYP7 -> BYP_B7 , 
+  pip INT_X16Y71 BYP7 -> BYP_BOUNCE7 , 
+  pip INT_X16Y71 CTRL1 -> CTRL_B1 , 
+  pip INT_X16Y71 EL2BEG1 -> FAN4 , 
+  pip INT_X16Y71 EL2BEG1 -> FAN5 , 
+  pip INT_X16Y71 EL2BEG1 -> IMUX_B15 , 
+  pip INT_X16Y71 FAN4 -> FAN_BOUNCE4 , 
+  pip INT_X16Y71 FAN5 -> FAN_BOUNCE5 , 
+  pip INT_X16Y71 FAN_BOUNCE4 -> CTRL1 , 
+  pip INT_X16Y71 FAN_BOUNCE5 -> BYP7 , 
+  pip INT_X16Y71 LOGIC_OUTS1 -> EL2BEG1 , 
+  pip INT_X16Y71 LOGIC_OUTS1 -> NL2BEG1 , 
+  pip INT_X16Y71 LOGIC_OUTS1 -> SR2BEG0 , 
+  pip INT_X16Y71 LOGIC_OUTS1 -> SW2BEG1 , 
+  pip INT_X16Y71 LOGIC_OUTS1 -> WL2BEG1 , 
+  pip INT_X16Y71 LOGIC_OUTS1 -> WS2BEG1 , 
+  pip INT_X16Y71 SR2BEG0 -> IMUX_B36 , 
+  pip INT_X16Y72 BYP_BOUNCE_N7 -> IMUX_B20 , 
+  pip INT_X16Y72 NL2MID1 -> IMUX_B15 , 
+  pip INT_X16Y72 NL2MID1 -> IMUX_B3 , 
+  pip INT_X16Y72 NL2MID1 -> IMUX_B9 , 
+  pip INT_X16Y73 BYP2 -> BYP_BOUNCE2 , 
+  pip INT_X16Y73 BYP6 -> BYP_BOUNCE6 , 
+  pip INT_X16Y73 BYP_BOUNCE2 -> IMUX_B7 , 
+  pip INT_X16Y73 BYP_BOUNCE6 -> IMUX_B2 , 
+  pip INT_X16Y73 BYP_BOUNCE6 -> IMUX_B38 , 
+  pip INT_X16Y73 BYP_BOUNCE6 -> IMUX_B44 , 
+  pip INT_X16Y73 FAN5 -> FAN_BOUNCE5 , 
+  pip INT_X16Y73 FAN_BOUNCE5 -> BYP2 , 
+  pip INT_X16Y73 FAN_BOUNCE5 -> BYP6 , 
+  pip INT_X16Y73 NL2END1 -> FAN5 , 
+  ;
+net "stato_FSM_FFd2" , 
+  outpin "stato_FSM_FFd3" CQ ,
+  inpin "ru4" A6 ,
+  inpin "ru4" B6 ,
+  inpin "ru4" C3 ,
+  inpin "ru4" D5 ,
+  inpin "stato_FSM_FFd3" A2 ,
+  pip CLBLL_X16Y71 L_CQ -> SITE_LOGIC_OUTS2 , 
+  pip CLBLL_X16Y71 SITE_IMUX_B4 -> L_A2 , 
+  pip CLBLL_X16Y73 SITE_IMUX_B0 -> L_A6 , 
+  pip CLBLL_X16Y73 SITE_IMUX_B36 -> L_B6 , 
+  pip CLBLL_X16Y73 SITE_IMUX_B45 -> L_D5 , 
+  pip CLBLL_X16Y73 SITE_IMUX_B8 -> L_C3 , 
+  pip INT_X16Y71 LOGIC_OUTS2 -> ER2BEG2 , 
+  pip INT_X16Y71 LOGIC_OUTS2 -> IMUX_B4 , 
+  pip INT_X16Y73 FAN2 -> FAN_BOUNCE2 , 
+  pip INT_X16Y73 FAN3 -> FAN_BOUNCE3 , 
+  pip INT_X16Y73 FAN_BOUNCE2 -> IMUX_B0 , 
+  pip INT_X16Y73 FAN_BOUNCE2 -> IMUX_B36 , 
+  pip INT_X16Y73 FAN_BOUNCE3 -> IMUX_B45 , 
+  pip INT_X16Y73 WL2MID1 -> FAN2 , 
+  pip INT_X16Y73 WL2MID1 -> FAN3 , 
+  pip INT_X16Y73 WL2MID1 -> IMUX_B8 , 
+  pip INT_X17Y71 ER2MID2 -> NL2BEG_S0 , 
+  pip INT_X17Y73 NL2MID0 -> WL2BEG1 , 
+  ;
+net "stato_FSM_FFd3" , 
+  outpin "stato_FSM_FFd3" DQ ,
+  inpin "coda0<4>" A2 ,
+  inpin "coda0<4>" D6 ,
+  inpin "ru4" A3 ,
+  inpin "ru4" B3 ,
+  inpin "ru4" C5 ,
+  inpin "ru4" D6 ,
+  inpin "stato_FSM_FFd3" A1 ,
+  pip CLBLL_X16Y71 L_DQ -> SITE_LOGIC_OUTS3 , 
+  pip CLBLL_X16Y71 SITE_IMUX_B5 -> L_A1 , 
+  pip CLBLL_X16Y73 SITE_IMUX_B3 -> L_A3 , 
+  pip CLBLL_X16Y73 SITE_IMUX_B39 -> L_B3 , 
+  pip CLBLL_X16Y73 SITE_IMUX_B47 -> L_D6 , 
+  pip CLBLL_X16Y73 SITE_IMUX_B9 -> L_C5 , 
+  pip CLBLM_X15Y70 SITE_IMUX_B4 -> L_A2 , 
+  pip CLBLM_X15Y70 SITE_IMUX_B47 -> L_D6 , 
+  pip INT_X15Y70 FAN_BOUNCE_S0 -> IMUX_B4 , 
+  pip INT_X15Y70 FAN_BOUNCE_S0 -> IMUX_B47 , 
+  pip INT_X15Y71 FAN0 -> FAN_BOUNCE0 , 
+  pip INT_X15Y71 SL2END0 -> FAN0 , 
+  pip INT_X15Y73 WL2MID1 -> SL2BEG0 , 
+  pip INT_X16Y71 EL2BEG2 -> IMUX_B5 , 
+  pip INT_X16Y71 LOGIC_OUTS3 -> EL2BEG2 , 
+  pip INT_X16Y71 LOGIC_OUTS3 -> NL2BEG_S0 , 
+  pip INT_X16Y73 BYP1 -> BYP_BOUNCE1 , 
+  pip INT_X16Y73 BYP5 -> BYP_BOUNCE5 , 
+  pip INT_X16Y73 BYP_BOUNCE1 -> IMUX_B3 , 
+  pip INT_X16Y73 BYP_BOUNCE1 -> IMUX_B39 , 
+  pip INT_X16Y73 BYP_BOUNCE1 -> IMUX_B9 , 
+  pip INT_X16Y73 BYP_BOUNCE5 -> IMUX_B47 , 
+  pip INT_X16Y73 NL2MID0 -> BYP1 , 
+  pip INT_X16Y73 NL2MID0 -> BYP5 , 
+  pip INT_X16Y73 NL2MID0 -> WL2BEG1 , 
+  ;
+
+# =======================================================
+# SUMMARY
+# Number of Module Defs: 0
+# Number of Module Insts: 0
+# Number of Primitive Insts: 24
+# Number of Nets: 71
+# =======================================================
+
